@@ -1,0 +1,99 @@
+// Project showcase.
+//
+// .project-preview--mobile-list - Uses to show mobile preview in a list.
+// .project-preview--side-by-side - Uses to show mobile and browser preview at the same line.
+.project-showcase {
+    // Create a new position context, so browser and mobile previews can
+    // be properly positioned.
+    position: relative;
+
+    // Add margin bellow.
+    margin-bottom: 2* @unit;
+
+
+    // Limit the widths of gallery cells too their containers.
+    .gallery-cell { width: 100%; }
+
+
+    &--side-by-side {
+        // Keep only mobile preview on small screen.
+        .browser { display: none; }
+
+        // Ensure the preview is aligned to center of the viewport.
+        .mobile {
+            margin-left: auto; margin-right: auto;
+        }
+
+        // Explicitly remove gallery navigation button on small screen.
+        .flickity-page-dots,
+        .flickity-prev-next-button { display: none; }
+
+
+        @media @mobile {
+            // Show gallery navigation buttons. Ensure they are don't
+            // show above the screenshots.
+            .flickity-prev-next-button {
+                display: block;
+
+                &.previous { left:  -22%; }
+                &.next     { right: -22%; }
+            }
+        }
+
+
+        // Show only browser preview on tablet and hide a mobile one.
+        @media @tablet {
+            .browser { display: block; }
+            .mobile { display: none; }
+
+
+            // Display additional navigation dots.
+            .flickity-page-dots { display: block; }
+        }
+
+
+        // Show browser and mobile preview side by side. Limit the width of
+        // browser window to ensure the mobile preview has enough space to
+        // shown. Pull mobile preview to the right as well.
+        @media @laptop-and-up {
+            .browser {
+                display: block;
+                width: 85%;
+
+                // Show gallery navigation button only for browser preview.
+                // Ensure they are don't show above the screenshots.
+                .flickity-prev-next-button {
+                    display: block;
+
+                    &.previous { left: -6.5%; }
+                    &.next     { right: -24%; }
+                }
+            }
+
+            .mobile {
+                position: absolute;
+                right: 0;
+                bottom: -1em;
+            }
+        }
+   }
+
+
+    &--truncate {
+        // Limit the project preview height. Ensure the truncated part
+        // is hidden.
+        max-height: 30em;
+        overflow: hidden;
+
+        // Remove margin when showcase is truncated.
+        margin-bottom: 0;
+
+
+        // Explicitly remove bottom border from browser workspace to prevents
+        // doubled border when showcase is truncated.
+        .browser-workspace { border-bottom: none; }
+
+        // A little bit move mobile preview to hide bottom of the phone.
+        .mobile { bottom: -3em; }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "work",
+  "authors": [
+    "Vital Kudzelka <vital.kudzelka@gmail.com>"
+  ],
+  "description": "Web design and development by Vital Kudzelka",
+  "license": "MIT",
+  "homepage": "https://github.com/vitalk",
+  "private": true,
+  "dependencies": {
+    "classy-aliases": "~0.1.0",
+    "classy-border-box": "~0.1.0",
+    "classy-button": "~0.4.0",
+    "classy-clearfix": "~0.1.1",
+    "classy-defaults": "~0.2.2",
+    "classy-headings": "~0.1.0",
+    "classy-images": "~0.2.1",
+    "classy-lists": "~0.2.0",
+    "classy-media-queries": "~0.1.0",
+    "classy-nav": "~0.2.0",
+    "classy-page": "~0.2.0",
+    "classy-snippets": "~0.1.0",
+    "classy-typography": "~0.2.0",
+    "lesshat": "~3.0.2",
+    "jquery": "~2.1.4",
+    "jquery-flyout": "~0.0.2",
+    "flickity": "~1.1.0"
+  }
+}

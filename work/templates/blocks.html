@@ -1,0 +1,250 @@
+{% macro menu(menu) %}
+  {% for item in menu %}
+    {% set index = loop.index0 %}
+    <li><a
+      {%- for attr, values in kwargs.items() %}
+        {%- if attr == 'class' %}
+          {{ attr }}="{{ values[index] }}{% if item.is_active %} is-active{% endif %}"
+        {%- else %}
+          {{ attr }}="{{ values[index] }}"
+        {%- endif %}
+      {%- endfor %} href="{{ item.href }}">{{ item.text }}</a></li>
+  {% endfor %}
+{% endmacro %}
+
+{% macro browser() %}
+<div class="browser">
+  <div class="browser-panel">
+    <div class="browser-dots">
+      <div class="browser-dot"></div>
+      <div class="browser-dot"></div>
+      <div class="browser-dot"></div>
+    </div>
+  </div>
+  <div class="browser-workspace">
+    {{ caller() }}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro mobile() %}
+<div class="mobile">
+  <div class="mobile-screen">
+    {{ caller() }}
+  </div>
+  <div class="mobile-case"></div>
+</div>
+{% endmacro %}
+
+{% macro hello_woogle() %}
+  <article class="project project--woogle">
+    <div class="l-wrapper">
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+            <div class="marketing-column-title">Проект</div>
+
+            <p class="lead">
+               <strong class="project-name">Woogle</strong> — современный
+               сервис аренды недвижимости в Минске, с <strong> удобным поиском
+               и уведомлениями</strong> о новых объявлениях.</p>
+
+            <p>Каждый, кто хоть раз пытался снять квартиру или комнату, знает
+               на сколько это утомительный процесс. Когда я приступал к
+               разработке <strong>Woogle</strong>, мне хотелось исправить эту
+               ситуацию.</p>
+
+            <p>Именно поэтому <strong>в основе сервиса лежат
+               уведомления</strong> — нет никакой необходимости находиться на
+               сайте, чтобы быть в курсе новых объявлений. Чтобы получать
+               новые предложения на почту достаточно указать критерии для
+               поиска, а остальное будет сделано автоматически.
+               <strong>Просто и удобно</strong>.</p>
+
+             <small>
+               <p>Несмотря на то, что проект всё ещё находится в активной
+                  разработке, уже сейчас можно оценить все преимущества
+                  выбранного подхода.</p>
+             </small>
+          </div>
+
+          <div class="l-layout-item marketing-column u-1/4@lap+">
+            <div class="marketing-column-title">Детали</div>
+
+            <div class="project-tagline">
+              <span class="project-tag">Проектирование</span>
+              <span class="project-tag">Дизайн интерфейса</span>
+              <span class="project-tag">Разработка</span>
+              <span class="project-tag">Поддержка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--side-by-side">
+        {% call browser() %}
+          <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
+        {% endcall %}
+
+        {% call mobile() %}
+          <img src="{{ url_for('static', filename='images/woogle/landing-page--2.png') }}" alt="">
+        {% endcall %}
+      </div>
+
+    </div>
+  </article>
+{% endmacro %}
+
+{% macro artsiom_site() %}
+  <article class="project project--mf">
+    <div class="l-wrapper">
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+            <div class="marketing-column-title">Проект</div>
+
+            <p class="lead">
+               <strong class="project-name">Артём Леонидович</strong> — талантливый
+               репетитор по математике и физике с современным подходом к
+               обучению.</p>
+
+            <p>Кроме создания <strong>яркого и запоминающегося
+               образа</strong>, его сайт предоставляет подробную информацию
+               для родителей об учебном процессе и подходе, используемом в
+               обучении детей.
+          </div>
+
+          <div class="l-layout-item marketing-column u-1/4@lap+">
+            <div class="marketing-column-title">Детали</div>
+
+            <div class="project-tagline">
+              <span class="project-tag">Концепция</span>
+              <span class="project-tag">Проектирование</span>
+              <span class="project-tag">Дизайн интерфейса</span>
+              <span class="project-tag">Разработка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--side-by-side">
+        {% call browser() %}
+          <a href="https://matfiz.by" target="_blank" title="Перейти на сайт">
+            <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
+          </a>
+        {% endcall %}
+        {% call mobile() %}
+          <a href="https://matfiz.by" target="_blank" title="Перейти на сайт">
+            <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--2.png') }}" alt="">
+          </a>
+        {% endcall %}
+      </div>
+
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+            <div class="marketing-column-title">Мониторинг успеваемости</div>
+
+            <p>Чтобы <strong>облегчить взаимодействие</strong> между
+               преподавателем и родителями, была разработана система
+               мониторинга успеваемости учеников. Она позволяет уведомлять
+               родителей об успеваемости своих детей и полностью
+               контролировать учебный процесс.</p>
+
+            <p>Вся разработка велась с учётом того, что пользоваться сайтом
+               должно быть <strong>одинаково удобно</strong> с любых
+               устройств, независимо от размера экрана.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--side-by-side">
+        {% call browser() %}
+          <div class="gallery js-flickity-gallery">
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list--1.png') }}" alt="">
+            </div>
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page--1.png') }}" alt="">
+            </div>
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests--1.png') }}" alt="">
+            </div>
+          </div>
+        {% endcall %}
+
+        {% call mobile() %}
+          <div class="gallery js-flickity-gallery">
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list--2.png') }}" alt="">
+            </div>
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page--2.png') }}" alt="">
+            </div>
+            <div class="gallery-cell">
+              <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests--2.png') }}" alt="">
+            </div>
+          </div>
+        {% endcall %}
+      </div>
+    </div>
+  </article>
+{% endmacro %}
+
+{% macro flask_styleguide() %}
+  <article class="project project--oss">
+    <div class="l-wrapper">
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+            <div class="marketing-column-title">Проект</div>
+
+            <p class="lead">
+               <strong class="project-name">Flask-Styleguide</strong> — открытый
+               под свободной лицензией, инструмент, который
+               позволяет автоматически визуализировать компоненты,
+               используемые в приложении.</p>
+
+            <p>С ростом популярности <strong>модульного подхода</strong> при
+               разработке интерфейса, растёт и потребность в создании и
+               поддержании в актуальном состоянии библиотеки компонентов.
+
+            <p>Данный инструмент помогает создать, и главное, поддерживать
+               в актуальном состоянии, библиотеку компонентов для любого сайта
+               или веб-приложения.</p>
+          </div>
+
+          <div class="l-layout-item marketing-column u-1/4@lap+">
+            <div class="marketing-column-title">Детали</div>
+
+            <div class="project-tagline">
+              <span class="project-tag">OSS</span>
+              <span class="project-tag">Разработка</span>
+              <span class="project-tag">Поддержка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--side-by-side">
+        {% call browser() %}
+          <img src="{{ url_for('static', filename='images/flask-styleguide/living-styleguide--1.png') }}" alt="">
+        {% endcall %}
+
+        {% call mobile() %}
+          <img src="{{ url_for('static', filename='images/flask-styleguide/living-styleguide--2.png') }}" alt="">
+        {% endcall %}
+      </div>
+    </div>
+  </article>
+{% endmacro %}
+
+{% macro social_nav(args) %}
+<nav>
+  <ul class="nav social-list">
+    <li><a href="https://plus.google.com/+VitalKudzelka" target="_blank">Google+</a></li>
+    <li><a href="https://twitter.com/elephantscanfly" target="_blank">Twitter</a></li>
+    <li><a href="https://github.com/vitalk" target="_blank">GitHub</a></li>
+  </ul>
+</nav>
+{% endmacro %}

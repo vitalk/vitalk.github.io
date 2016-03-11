@@ -1,0 +1,117 @@
+{% import 'blocks.html' as b %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block page_title %}{{ page_title ~ ' - ' if page_title }}Разработка и проектирование сайтов и веб-приложений - Виталий Куделка{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="author" content="Vital Kudzelka" />
+    {% endblock %}
+
+    {% block cssmain %}
+    {% assets "cssmain" %}
+      <link href="{{ ASSET_URL }}" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    {% endassets %}
+    {% endblock %}
+
+    {% block cssextra %}{% endblock %}
+  </head>
+  <body class="{% block bodyclass %}{% endblock %}">
+    <header class="masthead" role="banner">
+      <div class="icon icon--menu js-menu-open" role="button">
+        <div class="icon-line icon-line--1"></div>
+        <div class="icon-line icon-line--2"></div>
+        <div class="icon-line icon-line--3"></div>
+        <div class="icon-line icon-line--4"></div>
+      </div>
+
+      <nav class="nav-main" role="navigation">
+        <div class="icon icon--close js-menu-close" role="button">
+          <div class="icon-line icon-line--1"></div>
+          <div class="icon-line icon-line--2"></div>
+        </div>
+
+        {% block navigation %}
+        <ul class="nav nav--vertical site-navigation" role="menu">
+          {{ b.menu(site_nav,
+                    class=('fancy-url portfolio', 'fancy-url projects', 'fancy-url contact'),
+                    title=('Узнайте что я делаю', 'Посмотрите на мои работы', 'Свяжитесь со мной')) }}
+        </ul>
+
+        <ul class="nav nav--vertical contact-list" role="menu">
+          <li><a class="tel" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
+          <li><a class="email" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
+                 title="Напишите мне письмо">vital.kudzelka@gmail.com</a></li>
+        </ul>
+        {% endblock %}
+      </nav>
+    </header>
+
+    <main role="main">
+      {% block pagehead %}
+      <header class="hero hero--small hero--left i-am-hero js-banner" role="banner">
+        <div class="l-wrapper">
+          <h1 class="hero-title" role="heading">
+            Я <strong class="highlight highlight--project">проектирую</strong>
+            интерфейсы и <strong class="highlight highlight--project">разрабатываю</strong>
+            сайты, сервисы и <span class="text--nowrap">веб-приложения</span>,
+            которыми <strong class="highlight highlight--project">удобно и приятно</strong>
+            пользоваться.</h1>
+        </div>
+      </header>
+      {% endblock %}
+      {% block main %}Content goes here...{% endblock %}
+    </main>
+
+    <footer role="contentinfo">
+      {% block contentinfo %}
+      <section class="hero hero--responsive">
+        <div class="l-wrapper">
+          <p><a href="{{ url_for('frontend.contact') }}"
+                class="button text--wrap" role="button">Я ищу проекты
+                <span class="text--nowrap">на 1-2 кварталы</span>
+                <span class="text--nowrap">2016 года</span></a></p>
+
+          <p>Если у вас есть какие-либо вопросы или вы хотите обсудить детали
+             сотрудничества, то <strong>свяжитесь со мной</strong> любым
+             удобным способом.</p>
+
+          <ul class="nav social-list">
+            <li><a href="https://plus.google.com/+VitalKudzelka" target="_blank">Google+</a></li>
+            <li><a href="https://twitter.com/elephantscanfly" target="_blank">Twitter</a></li>
+            <li><a href="https://github.com/vitalk" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+      {% endblock %}
+
+      {% block contentinfoextra %}
+      <div class="page-footer">
+        <div class="l-wrapper">
+          Разработка и проектирование &copy; <strong class="text--nowrap">Виталий Куделка</strong>.
+          <div class="page-footer-meta">
+            <strong>Тел.</strong>
+            <a class="page-footer-tel" href="tel:+375293358679">+375 29 335-86-79</a>.
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+    </footer>
+
+    {% block jsmain %}
+
+    {% if config.DEBUG -%}
+      <!-- Connect to Livereload server -->
+      <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':1350/livereload.js"><\/script>')</script>
+    {%- endif %}
+
+    {% assets "scripts" %}
+      <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    {% endblock %}
+  </body>
+</html>

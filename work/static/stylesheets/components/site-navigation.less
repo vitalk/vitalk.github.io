@@ -1,0 +1,25 @@
+// Site navigation list.
+
+
+.site-navigation {
+    // Add a gap between site navigation and button to close menu.
+    margin-top: @unit/2;
+
+    // Add a gap between site navigation and contact list.
+    margin-bottom: @unit;
+
+    // Emphasis the site links.
+    font-size: @classy-h1-size;
+
+
+    a {
+        font-weight: normal;
+    }
+
+
+    @media @tablet, @laptop-and-up {
+        // Increase the gap between site navigation and close button on
+        // bigger screen.
+        margin-top: @unit;
+    }
+}

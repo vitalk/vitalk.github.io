@@ -1,0 +1,19 @@
+// Page constraint.
+
+
+@wrapper-namespace: l-wrapper;
+
+
+.@{wrapper-namespace} {
+    // Constrain the container width.
+    max-width: 90%;
+
+    @media @desktop {
+        max-width: 1000px;
+    }
+
+    // Center box at the viewport, so a little gap between edges of the screen
+    // and page constraint exists.
+    margin-left: auto;
+    margin-right: auto;
+}

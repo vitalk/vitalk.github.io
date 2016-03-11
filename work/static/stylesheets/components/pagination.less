@@ -1,0 +1,75 @@
+// Pagination.
+
+
+.pagination {
+    text-align: center;
+    border-bottom: solid 1px #d6d6d6;
+
+
+    &-subtitle {
+        .text--smaller;
+        .header--branded;
+
+        // Use single-direction margin.
+        margin-bottom: @unit/2;
+
+        color: #d6d6d8;
+
+        // Refine typography by adding some styling before and after element.
+        &:after  { content: ' –'; }
+        &:before { content: '– '; }
+    }
+
+
+    &-title {
+        // Increase font size and weight to emphasis title.
+        font-size: 1.25em;
+        font-weight: bold;
+
+        // Increase the inter-character space for better look.
+        letter-spacing: .375em;
+
+        // Decrease margin below to ensure more consistent vertical rhythm.
+        margin-bottom: @unit/2;
+    }
+
+
+    &-title,
+    &-subtitle {
+        transition: transform .3s ease-in-out;
+    }
+
+
+    &-text {
+        .text--small;
+        .text--branded;
+
+        // The block located inside the link element, which is bold by
+        // default. Ensure the text has normal weight.
+        font-weight: normal;
+
+        // Limit the width of block for better readability and center it to
+        // the viewport.
+        max-width: 30em;
+        margin: 0 auto;
+    }
+
+
+    // Use transition and transform to reveal text on hover. Always show text
+    // on mobile and tablet for better accessibility.
+    @media @laptop-and-up {
+
+        &-text {
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity .3s,
+                        transform .3s;
+
+            .pagination:hover &,
+            .pagination:focus & {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

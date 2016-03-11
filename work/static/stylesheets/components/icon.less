@@ -1,0 +1,78 @@
+// Pure CSS icons. Required some extra markup for proper work.
+//
+// .icon--menu - Open menu.
+// .icon--close - Close menu.
+//
+// Styleguide @ref.
+
+@icon-namespace: icon;
+
+.@{icon-namespace} {
+    #palette;
+    @x: 2.5em;
+    @y: (@x / 8 * 1em);
+
+    width: @x;
+    height: @x;
+    position: relative;
+    z-index: @z-index-masthead;
+
+    cursor: pointer;
+
+
+    &-line {
+        width: @x;
+        height: @y;
+        margin-bottom: @y;
+        transition: width .3s cubic-bezier(.15, 1, .2, 1);
+    }
+
+
+    &--close {
+        .@{icon-namespace}-line {
+            position: absolute;
+            top: @x/2;
+            left: 0;
+
+            &--1 { transform: rotate(45deg); }
+            &--2 { transform: rotate(-45deg); }
+        }
+    }
+
+
+    &--menu {
+        .@{icon-namespace}-line {
+            float: right;
+
+            &--1 { width: 95%; }
+            &--2 { width: 80%; }
+            &--3 { width: 65%; }
+            &--4 { width: 100%; }
+        }
+
+        &:hover {
+            .@{icon-namespace}-line--1 { width: 80%; }
+            .@{icon-namespace}-line--2 { width: 90%; }
+            .@{icon-namespace}-line--3 { width: 100%; }
+            .@{icon-namespace}-line--4 { width: 65%; }
+        }
+    }
+
+
+    .masthead &--menu {
+
+        // Freeze the open navigation menu button at the upper-right corner.
+        // Ensure it shown above the close button.
+        position: fixed;
+        top: 3/2* @unit;
+        right: 3/2* @unit;
+    }
+
+
+    .masthead &--close {
+        float: right;
+
+                .@{icon-namespace}-line { background: @c1; }
+        &:hover .@{icon-namespace}-line { background: @c2; }
+    }
+}

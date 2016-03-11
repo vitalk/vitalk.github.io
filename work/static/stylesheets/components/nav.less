@@ -1,0 +1,77 @@
+// Main site navigation.
+
+
+.nav li {
+    padding-top: @unit/8;
+    padding-bottom: @unit/8;
+}
+
+
+.nav-main {
+    #palette;
+
+    // Ensure the main navigation occupy the all viewport and placed above
+    // page content.
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 42;
+
+    // Ensure the user is capable to reach the content even on a small screen.
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    // Add empty space to breeze. Use the consistent padding to ensure the
+    // menu open/close icon show above each other.
+    padding: 3/2* @unit;
+
+    background: @b;
+
+
+    // Hide closed navigation. Don't remove it from the document flow to
+    // ensure the transition animation work as expected.
+    opacity: 0;
+    visibility: hidden;
+
+    &.is-opened {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    // Pull navigation menus and text as well to the right. Ensure the
+    // multiple menus stacked above each other.
+    .nav {
+        float: right;
+        clear: right;
+        text-align: right;
+    }
+
+
+    // Smoothly slide navigation items on menu opening. Use transition delay
+    // to show items one by one.
+    a {
+        transform: translateX(150%);
+        transition: transform .4s cubic-bezier(.19,1,.22,1);
+
+        &.portfolio { transition-delay: .1s; }
+        &.projects  { transition-delay: .15s; }
+        &.contact   { transition-delay: .2s; }
+        &.email     { transition-delay: .25s; }
+        &.tel       { transition-delay: .3s; }
+    }
+
+    &.is-opened a {
+        transform: translateX(0);
+    }
+
+
+    // Reuse page colors for each navigation item for consistency.
+    a {
+        &.portfolio:before { #palette--portfolio; background: @c; }
+        &.projects:before  { #palette--projects;  background: @c; }
+        &.contact:before   { #palette--contact;   background: @c; }
+    }
+}

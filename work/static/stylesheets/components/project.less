@@ -1,0 +1,46 @@
+// Project.
+
+
+.project {
+    // Add more empty space to breeze.
+    padding-top: 2* @unit;
+
+    border-bottom: solid 1px #d6d6d6;
+
+
+    &-name {
+        // Emphasis the name of the project.
+        font-weight: 600;
+    }
+
+
+    &-link {
+        // Force link to display as block to ensure the margin applied as
+        // expected.
+        display: inline-block;
+
+        // Use single-direction margin.
+        margin-bottom: @unit;
+
+        // Apply transition animation on hover.
+        .underline-from-left();
+    }
+
+
+    &--woogle {
+        #palette--woogle;
+        .project-name { color: @c; }
+    }
+
+
+    &--mf {
+        #palette--mf;
+        .project-name { color: @c; }
+    }
+
+
+    &--oss {
+        #palette--oss;
+        .project-name { color: @c; }
+    }
+}

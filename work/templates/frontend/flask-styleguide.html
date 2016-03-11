@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block page_title %}Как создать и поддерживать в актуальном состоянии библиотеку компонентов для вашего сайта или веб-приложения{% endblock %}
+{% block bodyclass %}page page--oss{% endblock %}
+{% block pagehead %}
+<header class="hero hero--small hero--left i-am-hero js-banner" role="banner">
+  <div class="l-wrapper">
+    <h1 class="hero-title" role="heading">
+       Я <strong class="highlight highlight--project">люблю</strong> и постоянно
+       использую <strong class="highlight highlight--project">открытое
+       программное обеспечение</strong> в своих проектах.</h1>
+  </div>
+</header>
+{% endblock %}
+{% block main %}
+{{ b.flask_styleguide() }}
+{% endblock %}
+{% block contentinfo %}
+<nav class="hero pagination">
+  <div class="l-wrapper">
+    <a href="{{ url_for('.work', slug='artsiom-kozlovskiy-site') }}">
+      <h3 class="pagination-subtitle">Следующий проект</h3>
+      <h1 class="pagination-title">Артём Козловский</h1>
+      <p class="pagination-text">Сайт репетитора Артёма Леонидовича Козловского.</p>
+    </a>
+  </div>
+</nav>
+
+<section class="hero hero--responsive thank-you-hero">
+  <div class="l-wrapper">
+    <h1 class="hero-title">Спасибо</h1>
+    <p>За то что уделили время на просмотр моих работ. Если вам что-то
+       понравилось или у вас есть какие-либо вопросы, то <strong>свяжитесь со
+       мной</strong> любым удобным способом.</p>
+
+    {{ b.social_nav() }}
+  </div>
+</section>
+{% endblock %}

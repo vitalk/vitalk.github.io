@@ -1,0 +1,19 @@
+// Text highlighting.
+//
+// .highlight--project - Per-project text highlighting.
+
+
+.highlight {
+    // Use normal font weight (we use custom colour to emphasis instead).
+    font-weight: normal;
+}
+
+
+.highlight--project {
+    .page--portfolio & { #palette--portfolio; color: @c; }
+    .page--projects  & { #palette--projects;  color: @c; }
+    .page--contact   & { #palette--contact;   color: @c; }
+    .page--mf        & { #palette--mf;        color: @c; }
+    .page--woogle    & { #palette--woogle;    color: @c; }
+    .page--oss       & { #palette--oss;       color: @c; }
+}

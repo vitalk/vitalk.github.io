@@ -1,0 +1,26 @@
+// Standfirst hero.
+
+
+.standfirst-@{hero-namespace} {
+    padding-bottom: @unit;
+
+
+    .@{hero-namespace}-title {
+        // Add more empty space to ensure the text located at the middle
+        // of the viewport on different screen sizes.
+        margin-top:       @unit;
+        margin-bottom: 2* @unit;
+
+        // Smaller font size on mobile, so the hero content is visible on
+        // small screen, and increase it on laptop and above to ensure the
+        // hero occupies available viewport.
+        font-size: 1.7em;
+
+        @media @laptop-and-up {
+            font-size: @classy-h1-size;
+
+            margin-top:    3* @unit;
+            margin-bottom: 5* @unit;
+        }
+    }
+}

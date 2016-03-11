@@ -1,0 +1,21 @@
+// Flyout.
+
+
+@flyout-namespace: flyout;
+
+
+.@{flyout-namespace} {
+    display: none;
+
+
+    &.is-opened {
+        display: block;
+    }
+
+
+    @media @laptop-and-up {
+        // Limit the container's width for better readability
+        // on laptop and above.
+        max-width: 70%;
+    }
+}

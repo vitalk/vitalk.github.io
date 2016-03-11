@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+{% block bodyclass %}page page--portfolio{% endblock %}
+{% block pagehead %}
+<header class="hero standfirst-hero" role="heading">
+  <div class="l-wrapper">
+    <h1 class="hero-title js-banner">
+      Я <strong class="highlight highlight--project">проектирую</strong>
+      интерфейсы и <strong class="highlight highlight--project">разрабатываю</strong>
+      сайты, сервисы и веб-приложения, которыми
+      <strong class="highlight highlight--project">удобно и приятно</strong>
+      пользоваться.</h1>
+
+    <div class="hero-content">
+      <a class="hero-link js-scrollable" href="/#works"
+         title="Посмотреть избранные проекты">Избранные проекты</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+{% block main %}
+<section class="entry entry--projects" id="works">
+  <article class="project project--mf">
+    <div class="l-wrapper">
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+            <div class="marketing-column-title">Проект</div>
+
+            <p class="lead">
+               <strong class="project-name">Артём Леонидович</strong> — талантливый
+               репетитор по математике и физике с современным подходом к
+               обучению.</p>
+
+            <p>Кроме создания <strong>яркого и запоминающегося
+               образа</strong>, в мою задачу входила разработка простой и
+               удобной системы для обработки заявок на обучение и мониторинга
+               успеваемости учеников.</p>
+
+            <a href="{{ url_for('.work', slug='artsiom-kozlovskiy-site') }}"
+               class="project-link" title="Читать статью полностью">Читать дальше</a>
+          </div>
+
+          <div class="l-layout-item marketing-column u-1/4@lap+">
+            <div class="marketing-column-title">Детали</div>
+
+            <div class="project-tagline">
+              <span class="project-tag">Концепция</span>
+              <span class="project-tag">Проектирование</span>
+              <span class="project-tag">Дизайн интерфейса</span>
+              <span class="project-tag">Разработка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--truncate project-showcase--side-by-side">
+        {% call b.browser() %}
+          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
+        {% endcall %}
+
+        {% call b.mobile() %}
+          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--2.png') }}" alt="">
+        {% endcall %}
+      </div>
+    </div>
+  </article>
+
+  <article class="project project--woogle">
+    <div class="l-wrapper">
+      <div class="project-info">
+        <div class="l-layout">
+          <div class="l-layout-item marketing-column u-3/4@lap+">
+             <div class="marketing-column-title">Проект</div>
+
+             <p class="lead">
+                <strong class="project-name">Woogle</strong> — современный
+                сервис аренды недвижимости в Минске, с <strong>удобным поиском
+                и уведомлениями</strong> о новых объявлениях.</p>
+
+             <p>Каждый, кто хоть раз пытался снять квартиру или комнату, знает
+                на сколько это утомительный процесс. Когда я приступал к
+                разработке <strong>Woogle</strong>, мне хотелось исправить эту
+                ситуацию.</p>
+
+             <a href="{{ url_for('.work', slug='woogle') }}"
+                class="project-link" title="Читать статью полностью">Читать дальше</a>
+          </div>
+
+          <div class="l-layout-item marketing-column u-1/4@lap+">
+            <div class="marketing-column-title">Детали</div>
+
+            <div class="project-tagline">
+              <span class="project-tag">Проектирование</span>
+              <span class="project-tag">Дизайн интерфейса</span>
+              <span class="project-tag">Разработка</span>
+              <span class="project-tag">Поддержка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-showcase project-showcase--truncate project-showcase--side-by-side">
+        {% call b.browser() %}
+          <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
+        {% endcall %}
+
+        {% call b.mobile() %}
+          <img src="{{ url_for('static', filename='images/woogle/landing-page--2.png') }}" alt="">
+        {% endcall %}
+      </div>
+    </div>
+  </article>
+</section>
+{% endblock %}

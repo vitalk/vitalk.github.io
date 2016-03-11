@@ -1,0 +1,30 @@
+// Marketing column.
+//
+// .marketing-column--rev - Align column title to the right and show dash before it.
+.marketing-column {
+
+    &-title {
+        .text--smaller;
+        .header--branded;
+
+        // Use single-direction margin.
+        margin-bottom: @unit;
+
+        // Mute text column.
+        color: #d6d6d8;
+
+        // Show dash after the column.
+        &:after { content: ' –'; }
+    }
+
+
+    // Reverse column title direction.
+    &--rev {
+        .marketing-column-title {
+            text-align: right;
+
+            &:after { display: none; }
+            &:before { content: '– '; }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block page_title %}Сайт репетитора Артёма Леонидовича Козловского{% endblock %}
+{% block bodyclass %}page page--mf{% endblock %}
+{% block pagehead %}
+<header class="hero hero--small hero--left i-am-hero" role="banner">
+  <div class="l-wrapper">
+    <h1 class="hero-title js-banner" role="heading">
+      Я <strong class="highlight highlight--project">проектирую интерфейсы</strong>
+      для мобильных устройств и разрабатываю сайты, которыми
+      <strong class="highlight highlight--project">удобно и приятно</strong> пользоваться.</h1>
+  </div>
+</header>
+{% endblock %}
+{% block main %}
+{{ b.artsiom_site() }}
+{% endblock %}
+{% block contentinfo %}
+<nav class="hero pagination">
+  <div class="l-wrapper">
+    <a href="{{ url_for('.work', slug='woogle') }}">
+      <h3 class="pagination-subtitle">Следующий проект</h3>
+      <h1 class="pagination-title">Woogle</h1>
+      <p class="pagination-text">Современный сервис аренды недвижимости в
+         Минске, с удобным поиском и уведомлениями.</p>
+    </a>
+  </div>
+</nav>
+
+<section class="hero hero--responsive thank-you-hero">
+  <div class="l-wrapper">
+    <h1 class="hero-title">Спасибо</h1>
+    <p>За то что уделили время на просмотр моих работ. Если вам что-то
+       понравилось или у вас есть какие-либо вопросы, то <strong>свяжитесь со
+       мной</strong> любым удобным способом.</p>
+
+    {{ b.social_nav() }}
+  </div>
+</section>
+{% endblock %}

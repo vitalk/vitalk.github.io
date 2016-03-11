@@ -1,0 +1,69 @@
+// Pseudo browser.
+//
+// Styleguide @ref.
+.browser {
+    #palette;
+    @bor: 5px;
+
+    // Prevents user's interactions.
+    user-select: none;
+
+
+    // Browser panel.
+    &-panel {
+        padding: .5em;
+
+        // Rounded corners.
+        border-radius: @bor @bor 0 0;
+
+        // Semi-transparent background allow uses project colour palette
+        // to colorize browser pane.
+        background: @c;
+
+        // Contains only floated elements, prevents box collapse.
+        overflow: hidden;
+    }
+
+
+        // Browser dots.
+        &-dots {
+
+            // Pull them to the left.
+            float: left;
+
+            // Browser dots are floated to ensure they shown inline. Prevents
+            // box collapse.
+            overflow: hidden;
+        }
+
+
+            // Browser dot.
+            &-dot {
+                width: .45em;
+                height: .45em;
+                border-radius: 50%;
+
+                // Show them in a line.
+                float: left;
+
+                // Add a gap between them.
+                margin-right: .3em;
+
+
+                &:nth-child(1) { background: #fe7772; }
+                &:nth-child(2) { background: #feba56; }
+                &:nth-child(3) { background: #41c65d; }
+            }
+
+
+    // Browser workspace.
+    &-workspace {
+        background: #fff;
+        border-color: @c1;
+        border-style: solid;
+        border-width: 0 1px 1px;
+
+        // Rounded corners at bottom.
+        border-radius: 0;
+    }
+}

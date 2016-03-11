@@ -1,0 +1,45 @@
+// Mobile phone.
+//
+// Styleguide @ref.
+.mobile {
+    #palette;
+    @z: 5;
+
+    width: 14em;
+    height: 25.3125em;
+
+    // Create a new position context, so the screen and case
+    // can be properly positioned.
+    position: relative;
+
+    // Prevents user's interactions.
+    user-select: none;
+
+
+    // Mobile screen.
+    &-screen {
+        position: absolute;
+        top: 2.5em;
+        bottom: 2.5em;
+        left: .222222em;
+        right: .222222em;
+
+        // Ensure the screen shown above the case.
+        z-index: (@z + 1);
+
+        background: @b;
+    }
+
+
+    // Mobile case.
+    &-case {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: @z;
+
+        // Rounded corners.
+        border-radius: 1.444em;
+
+        background: darken(@c, 5);
+    }
+}

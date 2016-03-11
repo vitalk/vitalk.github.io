@@ -1,0 +1,23 @@
+
+
+.i-am-@{hero-namespace} {
+
+    .@{hero-namespace}-title {
+        // Ensure the page navigation don't overflow the hero's content.
+        margin-right: 5em;
+
+        // Decrease font size on small screen and increase on the bigger one.
+        font-size: 1.2em;
+
+        @media @laptop-and-up {
+            font-size: @classy-h5-size;
+        }
+    }
+
+
+    // FIXME
+    .@{hero-namespace}-link {
+        display: inline-block;
+        margin-bottom: 2* @unit;
+    }
+}

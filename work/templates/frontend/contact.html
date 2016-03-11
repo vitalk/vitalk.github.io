@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block bodyclass %}page page--contact{% endblock %}
+{% block main %}
+<section class="entry">
+  <div class="l-wrapper">
+    <div class="l-layout">
+      <div class="l-layout-item marketing-column u-3/5@lap+">
+        <div class="marketing-column-title">Свяжитесь со мной</div>
+
+        <p class="lead">Если вы, так же как и я, увлечены своим делом,
+           <strong class="highlight highlight--project">вместе</strong> мы
+           сможем создать отличный продукт.</p>
+
+        <p><strong>Свяжитесь со мной</strong>, если у вас есть какие-либо
+           вопросы или вы хотите обсудить детали сотрудничества.</p>
+      </div>
+
+      <div class="l-layout-item marketing-column marketing-column--rev u-2/5@lap+">
+        <div class="marketing-column-title">Контакты</div>
+
+        <ul class="nav nav--vertical contact-list">
+          <li><a href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
+          <li><a href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
+                 title="Напишите мне письмо">vital.kudzelka@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block contentinfo %}
+<footer class="hero hero-contacts">
+  <div class="l-wrapper">
+    {{ b.social_nav() }}
+  </div>
+</footer>
+{% endblock %}
+{% block contentinfoextra %}{% endblock %}

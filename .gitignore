@@ -1,0 +1,34 @@
+# Python bytecode / optimized files
+__pytest__
+*.py[cod]
+
+# Setuptools / distribution / packaging
+*.egg
+*.egg-info
+build
+dist
+v?env
+
+# Logs O_o
+*.log
+
+# Test stuff
+*.db
+
+# Babel translations
+*.pot
+*.mo
+
+# Compiled and minified assets
+**/dist/**
+
+# Node packages
+node_modules
+
+# Bower-managed packages
+**/static/vendor
+
+# Production configuration for application
+production.cfg
+
+gh-pages

@@ -1,0 +1,33 @@
+// How to get in touch navigation.
+
+
+.contact-list {
+    // Increase the font size.
+    font-size: @classy-h6-size;
+
+    // Pull text to the right.
+    text-align: right;
+
+
+    a {
+        // Use inline block for navigation links to ensure the border bottom
+        // don't stretches to widest list item.
+        display: inline-block !important;
+
+        // Use single-direction margins.
+        margin-bottom: @unit/2;
+
+        .underline-from-right();
+
+
+        &:after,
+        &:before {
+            height: 2px;
+        }
+
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+// We're need a HERO!
+//
+// .hero--responsive - Used to adjust hero spacing on mobile and above.
+// .hero--small - Used to decrease vertical padding.
+// .hero--left - Used to align text to left.
+
+
+@hero-namespace: hero;
+
+
+.@{hero-namespace} {
+    // Add more empty space to breeze.
+    padding-top:    4* @unit;
+    padding-bottom: 4* @unit;
+
+    // Align text to center.
+    text-align: center;
+
+
+    &-link {
+        // Apply transition animation on hover.
+        .underline-from-left();
+    }
+}
+
+
+.@{hero-namespace}--small {
+    // More empty space to breeze.
+    padding-top: 2* @unit;
+    padding-bottom: 2* @unit;
+}
+
+
+.@{hero-namespace}--left {
+    // Align text to left.
+    text-align: left;
+}
+
+
+.@{hero-namespace}--responsive {
+    // Decrease box padding on mobile.
+    padding-top: 2* @unit;
+    padding-bottom: 2* @unit;
+
+
+    @media @laptop-and-up {
+        // Restore box padding back when screen is increased.
+        padding-top: 4* @unit;
+        padding-bottom: 4* @unit;
+    }
+}
