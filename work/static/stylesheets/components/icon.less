@@ -17,7 +17,11 @@
     position: relative;
     z-index: @z-index-masthead;
 
+    // Icons are clickable elements.
     cursor: pointer;
+
+    // Prevents icon outline, define the focus state instead.
+    outline: none;
 
 
     &-line {
@@ -50,7 +54,8 @@
             &--4 { width: 100%; }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             .@{icon-namespace}-line--1 { width: 80%; }
             .@{icon-namespace}-line--2 { width: 90%; }
             .@{icon-namespace}-line--3 { width: 100%; }
@@ -73,6 +78,7 @@
         float: right;
 
                 .@{icon-namespace}-line { background: @c1; }
-        &:hover .@{icon-namespace}-line { background: @c2; }
+        &:hover .@{icon-namespace}-line,
+        &:focus .@{icon-namespace}-line { background: @c2; }
     }
 }
