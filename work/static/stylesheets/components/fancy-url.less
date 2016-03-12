@@ -22,6 +22,9 @@
     // Add margin before to ensure it's enought space to show fancy dot.
     margin-left: 2em;
 
+    // Remove outline; define focus state instead.
+    outline: none;
+
 
     // Show fancy dot before each navigation item and reveal it on hover.
     // Always show dot before active item.
@@ -31,6 +34,7 @@
     }
 
     &:hover:before,
+    &:focus:before,
     &.is-active:before {
         opacity: 1;
     }
@@ -41,7 +45,9 @@
     &.is-active { pointer-events: auto !important; }
 
 
-    // Animate fancy dot for active navigation item and others only on hover.
-    &:hover:before     { animation: yes      5s infinite ease .3s; }
+    // Animate fancy dot for active navigation item and others
+    // only on hover/focus.
+    &:hover:before,
+    &:focus:before     { animation: yes      5s infinite ease .3s; }
     &.is-active:before { animation: nooo-o-o 5s infinite ease 1s; }
 }
