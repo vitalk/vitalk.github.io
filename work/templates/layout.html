@@ -43,8 +43,8 @@
         </ul>
 
         <ul class="nav nav--vertical contact-list" role="menu">
-          <li><a class="tel" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
-          <li><a class="email" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
+          <li><a class="link link--right tel" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
+          <li><a class="link link--right email" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
                  title="Напишите мне письмо">vital.kudzelka@gmail.com</a></li>
         </ul>
         {% endblock %}
@@ -80,11 +80,7 @@
              сотрудничества, то <strong>свяжитесь со мной</strong> любым
              удобным способом.</p>
 
-          <ul class="nav social-list">
-            <li><a href="https://plus.google.com/+VitalKudzelka" target="_blank">Google+</a></li>
-            <li><a href="https://twitter.com/elephantscanfly" target="_blank">Twitter</a></li>
-            <li><a href="https://github.com/vitalk" target="_blank">GitHub</a></li>
-          </ul>
+           {{ b.social_nav() }}
         </div>
       </section>
       {% endblock %}
