@@ -1,11 +1,8 @@
 // Pure CSS icons. Required some extra markup for proper work.
 //
-// .icon--menu - Open menu.
-// .icon--close - Close menu.
-//
 // Styleguide @ref.
 
-@icon-namespace: icon;
+@icon-namespace: i;
 
 .@{icon-namespace} {
     #palette;
@@ -32,7 +29,7 @@
     }
 
 
-    &--close {
+    &-close {
         .@{icon-namespace}-line {
             position: absolute;
             top: @x/2;
@@ -44,7 +41,7 @@
     }
 
 
-    &--menu {
+    &-menu {
         .@{icon-namespace}-line {
             float: right;
 
@@ -64,7 +61,7 @@
     }
 
 
-    .masthead &--menu {
+    .masthead &-menu {
 
         // Freeze the open navigation menu button at the upper-right corner.
         // Ensure it shown above the close button.
@@ -74,7 +71,7 @@
     }
 
 
-    .masthead &--close {
+    .masthead &-close {
         float: right;
 
                 .@{icon-namespace}-line { background: @c1; }
