@@ -53,10 +53,12 @@
 
         &:hover,
         &:focus {
-            .@{icon-namespace}-line--1 { width: 80%; }
-            .@{icon-namespace}-line--2 { width: 90%; }
-            .@{icon-namespace}-line--3 { width: 100%; }
-            .@{icon-namespace}-line--4 { width: 65%; }
+            .@{icon-namespace}-line {
+                &--1 { width: 80%; }
+                &--2 { width: 90%; }
+                &--3 { width: 100%; }
+                &--4 { width: 65%; }
+            }
         }
     }
 
