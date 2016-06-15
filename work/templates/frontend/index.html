@@ -3,15 +3,15 @@
 {% block pagehead %}
 <header class="hero standfirst-hero" role="heading">
   <div class="l-wrapper">
-    <h1 class="hero-title js-banner">
+    <h1 class="hero__title js-banner">
       Я <strong class="highlight highlight--project">проектирую</strong>
       интерфейсы и <strong class="highlight highlight--project">разрабатываю</strong>
       сайты, сервисы и веб-приложения, которыми
       <strong class="highlight highlight--project">удобно и приятно</strong>
       пользоваться.</h1>
 
-    <div class="hero-content">
-      <a class="link link--ltr hero-link js-scrollable" href="/#works"
+    <div class="hero__content">
+      <a class="link link--ltr hero__link js-scrollable" href="/#works"
          title="Посмотреть избранные проекты">Избранные проекты</a>
     </div>
   </div>
@@ -21,13 +21,13 @@
 <section class="entry entry--projects" id="works">
   <article class="project project--mf">
     <div class="l-wrapper">
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-            <div class="marketing-column-title">Проект</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+            <div class="marketing-column__title">Проект</div>
 
             <p class="lead">
-               <strong class="project-name">Артём Леонидович</strong> — талантливый
+               <strong class="project__name">Артём Леонидович</strong> — талантливый
                репетитор по математике и физике с современным подходом к
                обучению.</p>
 
@@ -37,23 +37,23 @@
                успеваемости учеников.</p>
 
             <a href="{{ url_for('.work', slug='artsiom-kozlovskiy-site') }}"
-               class="link link--ltr project-link" title="Читать статью полностью">Читать дальше</a>
+               class="link link--ltr project__link" title="Читать статью полностью">Читать дальше</a>
           </div>
 
-          <div class="l-layout-item marketing-column 1/4@lap+">
-            <div class="marketing-column-title">Детали</div>
+          <div class="l-layout__item marketing-column 1/4@lap+">
+            <div class="marketing-column__title">Детали</div>
 
-            <div class="project-tagline">
-              <span class="project-tag">Концепция</span>
-              <span class="project-tag">Проектирование</span>
-              <span class="project-tag">Дизайн интерфейса</span>
-              <span class="project-tag">Разработка</span>
+            <div class="project__tagline">
+              <span class="project__tag">Концепция</span>
+              <span class="project__tag">Проектирование</span>
+              <span class="project__tag">Дизайн интерфейса</span>
+              <span class="project__tag">Разработка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--truncate project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--truncate project__showcase--side-by-side">
         {% call b.browser() %}
           <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
         {% endcall %}
@@ -67,13 +67,13 @@
 
   <article class="project project--woogle">
     <div class="l-wrapper">
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-             <div class="marketing-column-title">Проект</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+             <div class="marketing-column__title">Проект</div>
 
              <p class="lead">
-                <strong class="project-name">Woogle</strong> — современный
+                <strong class="project__name">Woogle</strong> — современный
                 сервис аренды недвижимости в Минске, с <strong>удобным поиском
                 и уведомлениями</strong> о новых объявлениях.</p>
 
@@ -83,23 +83,23 @@
                 ситуацию.</p>
 
              <a href="{{ url_for('.work', slug='woogle') }}"
-                class="link link--ltr project-link" title="Читать статью полностью">Читать дальше</a>
+                class="link link--ltr project__link" title="Читать статью полностью">Читать дальше</a>
           </div>
 
-          <div class="l-layout-item marketing-column 1/4@lap+">
-            <div class="marketing-column-title">Детали</div>
+          <div class="l-layout__item marketing-column 1/4@lap+">
+            <div class="marketing-column__title">Детали</div>
 
-            <div class="project-tagline">
-              <span class="project-tag">Проектирование</span>
-              <span class="project-tag">Дизайн интерфейса</span>
-              <span class="project-tag">Разработка</span>
-              <span class="project-tag">Поддержка</span>
+            <div class="project__tagline">
+              <span class="project__tag">Проектирование</span>
+              <span class="project__tag">Дизайн интерфейса</span>
+              <span class="project__tag">Разработка</span>
+              <span class="project__tag">Поддержка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--truncate project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--truncate project__showcase--side-by-side">
         {% call b.browser() %}
           <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
         {% endcall %}

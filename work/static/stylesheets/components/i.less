@@ -21,7 +21,7 @@
     outline: none;
 
 
-    &-line {
+    &__line {
         width: @x;
         height: @y;
         margin-bottom: @y;
@@ -30,7 +30,7 @@
 
 
     &-close {
-        .@{icon-namespace}-line {
+        .@{icon-namespace}__line {
             position: absolute;
             top: @x/2;
             left: 0;
@@ -42,7 +42,7 @@
 
 
     &-menu {
-        .@{icon-namespace}-line {
+        .@{icon-namespace}__line {
             float: right;
 
             &--1 { width: 95%; }
@@ -53,7 +53,7 @@
 
         &:hover,
         &:focus {
-            .@{icon-namespace}-line {
+            .@{icon-namespace}__line {
                 &--1 { width: 80%; }
                 &--2 { width: 90%; }
                 &--3 { width: 100%; }
@@ -76,8 +76,8 @@
     .masthead &-close {
         float: right;
 
-                .@{icon-namespace}-line { background: @c1; }
-        &:hover .@{icon-namespace}-line,
-        &:focus .@{icon-namespace}-line { background: @c2; }
+                .@{icon-namespace}__line { background: @c1; }
+        &:hover .@{icon-namespace}__line,
+        &:focus .@{icon-namespace}__line { background: @c2; }
     }
 }

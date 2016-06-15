@@ -13,7 +13,7 @@
     htmlbody:   $('html,body'),
     nav:        $('.nav-main'),
     flyout:     $('.flyout'),
-    fadeable:   $('.js-banner,.project-info p'),
+    fadeable:   $('.js-banner,.project__info p'),
     scrollable: $('.js-scrollable'),
     gallery:    $('.js-flickity-gallery')
   };
@@ -51,14 +51,14 @@
 
       if ($el.closest('.mobile').length) {
         $el.on('cellSelect', function() {
-          $el.closest('.project-showcase').find('.browser .js-flickity-gallery')
+          $el.closest('.project__showcase').find('.browser .js-flickity-gallery')
              .flickity('select', flkty.selectedIndex);
         })
       };
 
       if ($el.closest('.browser').length) {
         $el.on('cellSelect', function() {
-          $el.closest('.project-showcase').find('.mobile .js-flickity-gallery')
+          $el.closest('.project__showcase').find('.mobile .js-flickity-gallery')
              .flickity('select', flkty.selectedIndex);
         })
       };

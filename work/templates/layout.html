@@ -23,16 +23,16 @@
   <body class="{% block bodyclass %}{% endblock %}">
     <header class="masthead" role="banner">
       <div class="i i-menu js-menu-open" role="button">
-        <div class="i-line i-line--1"></div>
-        <div class="i-line i-line--2"></div>
-        <div class="i-line i-line--3"></div>
-        <div class="i-line i-line--4"></div>
+        <div class="i__line i__line--1"></div>
+        <div class="i__line i__line--2"></div>
+        <div class="i__line i__line--3"></div>
+        <div class="i__line i__line--4"></div>
       </div>
 
       <nav class="nav-main" role="navigation">
         <div class="i i-close js-menu-close" role="button">
-          <div class="i-line i-line--1"></div>
-          <div class="i-line i-line--2"></div>
+          <div class="i__line i__line--1"></div>
+          <div class="i__line i__line--2"></div>
         </div>
 
         {% block navigation %}
@@ -55,7 +55,7 @@
       {% block pagehead %}
       <header class="hero hero--small hero--left i-am-a-hero js-banner" role="banner">
         <div class="l-wrapper">
-          <h1 class="hero-title" role="heading">
+          <h1 class="hero__title" role="heading">
             Я <strong class="highlight highlight--project">проектирую</strong>
             интерфейсы и <strong class="highlight highlight--project">разрабатываю</strong>
             сайты, сервисы и <span class="text--nowrap">веб-приложения</span>,
@@ -86,12 +86,12 @@
       {% endblock %}
 
       {% block contentinfoextra %}
-      <div class="page-footer">
+      <div class="page__footer">
         <div class="l-wrapper">
           Разработка и проектирование &copy;&nbsp;<strong class="text--nowrap">Виталий Куделка</strong>.
-          <div class="page-footer-meta">
+          <div class="page__meta">
             <strong>Тел.</strong>
-            <a class="page-footer-tel"
+            <a class="page__tel"
                href="tel:+375293358679">+375&thinsp;29&thinsp;335-86-79</a>.
           </div>
         </div>

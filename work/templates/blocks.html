@@ -14,14 +14,14 @@
 
 {% macro browser() %}
 <div class="browser">
-  <div class="browser-panel">
-    <div class="browser-dots">
-      <div class="browser-dot"></div>
-      <div class="browser-dot"></div>
-      <div class="browser-dot"></div>
+  <div class="browser__panel">
+    <div class="browser__dots">
+      <div class="browser__dot"></div>
+      <div class="browser__dot"></div>
+      <div class="browser__dot"></div>
     </div>
   </div>
-  <div class="browser-workspace">
+  <div class="browser__workspace">
     {{ caller() }}
   </div>
 </div>
@@ -29,23 +29,23 @@
 
 {% macro mobile() %}
 <div class="mobile">
-  <div class="mobile-screen">
+  <div class="mobile__screen">
     {{ caller() }}
   </div>
-  <div class="mobile-case"></div>
+  <div class="mobile__case"></div>
 </div>
 {% endmacro %}
 
 {% macro hello_woogle() %}
   <article class="project project--woogle">
     <div class="l-wrapper">
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-            <div class="marketing-column-title">Проект</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+            <div class="marketing-column__title">Проект</div>
 
             <p class="lead">
-               <strong class="project-name">Woogle</strong> — современный
+               <strong class="project__name">Woogle</strong> — современный
                сервис аренды недвижимости в Минске, с <strong> удобным поиском
                и уведомлениями</strong> о новых объявлениях.</p>
 
@@ -68,20 +68,20 @@
              </small>
           </div>
 
-          <div class="l-layout-item marketing-column 1/4@lap+">
-            <div class="marketing-column-title">Детали</div>
+          <div class="l-layout__item marketing-column 1/4@lap+">
+            <div class="marketing-column__title">Детали</div>
 
-            <div class="project-tagline">
-              <span class="project-tag">Проектирование</span>
-              <span class="project-tag">Дизайн интерфейса</span>
-              <span class="project-tag">Разработка</span>
-              <span class="project-tag">Поддержка</span>
+            <div class="project__tagline">
+              <span class="project__tag">Проектирование</span>
+              <span class="project__tag">Дизайн интерфейса</span>
+              <span class="project__tag">Разработка</span>
+              <span class="project__tag">Поддержка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--side-by-side">
         {% call browser() %}
           <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
         {% endcall %}
@@ -98,13 +98,13 @@
 {% macro artsiom_site() %}
   <article class="project project--mf">
     <div class="l-wrapper">
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-            <div class="marketing-column-title">Проект</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+            <div class="marketing-column__title">Проект</div>
 
             <p class="lead">
-               <strong class="project-name">Артём Леонидович</strong> — талантливый
+               <strong class="project__name">Артём Леонидович</strong> — талантливый
                репетитор по математике и физике с современным подходом к
                обучению.</p>
 
@@ -114,20 +114,20 @@
                обучении детей.
           </div>
 
-          <div class="l-layout-item marketing-column 1/4@lap+">
-            <div class="marketing-column-title">Детали</div>
+          <div class="l-layout__item marketing-column 1/4@lap+">
+            <div class="marketing-column__title">Детали</div>
 
-            <div class="project-tagline">
-              <span class="project-tag">Концепция</span>
-              <span class="project-tag">Проектирование</span>
-              <span class="project-tag">Дизайн интерфейса</span>
-              <span class="project-tag">Разработка</span>
+            <div class="project__tagline">
+              <span class="project__tag">Концепция</span>
+              <span class="project__tag">Проектирование</span>
+              <span class="project__tag">Дизайн интерфейса</span>
+              <span class="project__tag">Разработка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--side-by-side">
         {% call browser() %}
           <a href="https://matfiz.by" target="_blank" title="Перейти на сайт">
             <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
@@ -140,10 +140,10 @@
         {% endcall %}
       </div>
 
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-            <div class="marketing-column-title">Мониторинг успеваемости</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+            <div class="marketing-column__title">Мониторинг успеваемости</div>
 
             <p>Чтобы <strong>облегчить взаимодействие</strong> между
                преподавателем и родителями, была разработана система
@@ -158,16 +158,16 @@
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--side-by-side">
         {% call browser() %}
           <div class="gallery js-flickity-gallery">
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list--1.png') }}" alt="">
             </div>
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page--1.png') }}" alt="">
             </div>
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests--1.png') }}" alt="">
             </div>
           </div>
@@ -175,13 +175,13 @@
 
         {% call mobile() %}
           <div class="gallery js-flickity-gallery">
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list--2.png') }}" alt="">
             </div>
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page--2.png') }}" alt="">
             </div>
-            <div class="gallery-cell">
+            <div class="gallery__cell">
               <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests--2.png') }}" alt="">
             </div>
           </div>
@@ -194,13 +194,13 @@
 {% macro flask_styleguide() %}
   <article class="project project--oss">
     <div class="l-wrapper">
-      <div class="project-info">
+      <div class="project__info">
         <div class="l-layout">
-          <div class="l-layout-item marketing-column 3/4@lap+">
-            <div class="marketing-column-title">Проект</div>
+          <div class="l-layout__item marketing-column 3/4@lap+">
+            <div class="marketing-column__title">Проект</div>
 
             <p class="lead">
-               <strong class="project-name">Flask-Styleguide</strong> — открытый
+               <strong class="project__name">Flask-Styleguide</strong> — открытый
                под свободной лицензией, инструмент, который
                позволяет автоматически визуализировать компоненты,
                используемые в приложении.</p>
@@ -214,19 +214,19 @@
                или веб-приложения.</p>
           </div>
 
-          <div class="l-layout-item marketing-column 1/4@lap+">
-            <div class="marketing-column-title">Детали</div>
+          <div class="l-layout__item marketing-column 1/4@lap+">
+            <div class="marketing-column__title">Детали</div>
 
-            <div class="project-tagline">
-              <span class="project-tag">OSS</span>
-              <span class="project-tag">Разработка</span>
-              <span class="project-tag">Поддержка</span>
+            <div class="project__tagline">
+              <span class="project__tag">OSS</span>
+              <span class="project__tag">Разработка</span>
+              <span class="project__tag">Поддержка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project-showcase project-showcase--side-by-side">
+      <div class="project__showcase project__showcase--side-by-side">
         {% call browser() %}
           <img src="{{ url_for('static', filename='images/flask-styleguide/living-styleguide--1.png') }}" alt="">
         {% endcall %}

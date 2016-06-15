@@ -1,8 +1,8 @@
 // Project showcase.
 //
-// .project-preview--mobile-list - Uses to show mobile preview in a list.
-// .project-preview--side-by-side - Uses to show mobile and browser preview at the same line.
-.project-showcase {
+// .project__showcase--mobile-list - Uses to show mobile preview in a list.
+// .project__showcase--side-by-side - Uses to show mobile and browser preview at the same line.
+.project__showcase {
     // Create a new position context, so browser and mobile previews can
     // be properly positioned.
     position: relative;
@@ -12,7 +12,7 @@
 
 
     // Limit the widths of gallery cells too their containers.
-    .gallery-cell { width: 100%; }
+    .gallery__cell { width: 100%; }
 
 
     &--side-by-side {
@@ -91,7 +91,7 @@
 
         // Explicitly remove bottom border from browser workspace to prevents
         // doubled border when showcase is truncated.
-        .browser-workspace { border-bottom: none; }
+        .browser__workspace { border-bottom: none; }
 
         // A little bit move mobile preview to hide bottom of the phone.
         .mobile { bottom: -3em; }
