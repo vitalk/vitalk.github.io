@@ -1,7 +1,12 @@
 // Marketing column.
 //
 // .marketing-column--rev - Align column title to the right and show dash before it.
-.marketing-column {
+
+
+@marketing-namespace: marketing-column;
+
+
+.@{marketing-namespace} {
 
     &__title {
         .text--smaller;
@@ -20,7 +25,7 @@
 
     // Reverse column title direction.
     &--rev {
-        .marketing-column__title {
+        .@{marketing-namespace}__title {
             text-align: right;
 
             &:after { display: none; }
