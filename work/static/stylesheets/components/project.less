@@ -24,6 +24,19 @@
     }
 
 
+    &__tag {
+        .text--small;
+        .text--branded;
+
+        // Show tag inline when space is enough.
+        display: inline-block;
+        padding: .5em 0;
+
+        // Add a gap between tags.
+        margin-right: @unit;
+    }
+
+
     &--woogle {
         #palette--woogle;
         .project__name { color: @c; }
