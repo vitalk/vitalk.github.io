@@ -128,7 +128,6 @@
     this.initFlyout();
     this.initGallery();
     this.enableSmoothScroll();
-    this.fadeBanner();
   };
 
 
