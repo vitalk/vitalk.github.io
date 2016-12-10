@@ -2,7 +2,7 @@
 //
 // By padding:
 //
-// .hero_responsive - Used to adjust hero spacing on mobile and above.
+// .hero_p_responsive - Used to adjust hero spacing on mobile and above.
 // .hero_p_s - Used to decrease vertical padding.
 //
 // By text alignment:
@@ -30,13 +30,7 @@
 }
 
 
-.@{hero-namespace}_align_l {
-    // Align text to left.
-    text-align: left;
-}
-
-
-.@{hero-namespace}_responsive {
+.@{hero-namespace}_p_responsive {
     // Decrease box padding on mobile.
     padding-top: 2* @unit;
     padding-bottom: 2* @unit;
@@ -47,4 +41,10 @@
         padding-top: 4* @unit;
         padding-bottom: 4* @unit;
     }
+}
+
+
+.@{hero-namespace}_align_l {
+    // Align text to left.
+    text-align: left;
 }
