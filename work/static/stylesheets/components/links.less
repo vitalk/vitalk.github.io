@@ -1,7 +1,9 @@
 // Links and clickable objects.
 //
-// .link--ltr - Used to underline object from left.
-// .link--rtl - Used to underline object from right.
+// By direction:
+//
+// .link_dir_ltr - Used to underline object from left.
+// .link_dir_rtl - Used to underline object from right.
 
 
 // Use before and after pseudo elements to create two lines below the object.
@@ -83,12 +85,12 @@
     outline: none;
 
 
-    &--ltr {
+    &_dir_ltr {
         .underline-from-left();
     }
 
 
-    &--rtl {
+    &_dir_rtl {
         .underline-from-right();
     }
 }
