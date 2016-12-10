@@ -38,16 +38,21 @@
         </div>
 
         {% block navigation %}
-        <ul class="nav nav--vertical site-navigation" role="menu">
+        <ul class="nav nav_vertical site-navigation" role="menu">
           {{ b.menu(site_nav,
                     class=('fancy-url portfolio', 'fancy-url projects', 'fancy-url contact'),
                     title=('Узнайте что я делаю', 'Посмотрите на мои работы', 'Свяжитесь со мной')) }}
         </ul>
 
-        <ul class="nav nav--vertical contact-list" role="menu">
-          <li><a class="link link--rtl tel" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
-          <li><a class="link link--rtl email" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
-                 title="Напишите мне письмо">vital.kudzelka@gmail.com</a></li>
+        <ul class="nav nav_vertical contact-list" role="menu">
+          <li class="nav__item contact-list__item">
+            <a class="nav__link contact-list__link link link--rtl tel" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a>
+          </li>
+
+          <li class="nav__item contact-list__item">
+            <a class="nav__item contact-list__link link link--rtl email" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
+               title="Напишите мне письмо">vital.kudzelka@gmail.com</a>
+          </li>
         </ul>
         {% endblock %}
       </nav>

@@ -3,7 +3,7 @@
 
 .sm-list {
 
-    li {
+    &__item {
         // Stack list items on mobile.
         display: block;
 
@@ -22,7 +22,7 @@
     }
 
 
-    a {
+    &__link {
         .link--branded;
 
         margin-left: 1em;
@@ -31,7 +31,7 @@
 
 
     @media @laptop-and-up {
-        li {
+        &__item {
             // Show list items in a row.
             display: inline-block;
             margin-bottom: 0;
