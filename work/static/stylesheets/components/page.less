@@ -1,4 +1,6 @@
-// Page.
+// Page-level styling.
+
+
 .page {
 
     &__footer {
@@ -42,4 +44,50 @@
             float: right;
         }
     }
+}
+
+
+.colorize-page(@c) {
+    .@{icon-namespace}__line { background: @c; }
+    .contact-list__link:after { background: @c; }
+    .highlight--project { color: @c; }
+}
+
+
+.page--portfolio {
+    #palette--portfolio;
+    .colorize-page(@c);
+}
+
+
+.page--projects {
+    #palette--projects;
+    .colorize-page(@c);
+}
+
+
+.page--contact {
+    #palette--contact;
+    .colorize-page(@c);
+}
+
+
+// Artsiom’s site showcase.
+.page--mf {
+    #palette_mf;
+    .colorize-page(@c);
+}
+
+
+// Woogle showcase.
+.page--woogle {
+    #palette_woogle;
+    .colorize-page(@c);
+}
+
+
+// Open source showcase.
+.page--oss {
+    #palette_oss;
+    .colorize-page(@c);
 }
