@@ -6,6 +6,36 @@
 // .link_dir_rtl - Used to underline object from right.
 
 
+.link {
+    #palette;
+
+    // Force remove outline from any clickable objects. We've got
+    // pretty focus state.
+    outline: none;
+
+    color: @c2;
+    font-weight: 600;
+
+    // Remove text decoration from links.
+    text-decoration: none;
+
+
+    &_dir_ltr {
+        .underline-from-left();
+    }
+
+
+    &_dir_rtl {
+        .underline-from-right();
+    }
+}
+
+
+.link_hl_brand {
+    letter-spacing: .0625em;
+}
+
+
 // Use before and after pseudo elements to create two lines below the object.
 // The one of them has zero width and hidden by default, the other one
 // emulates text underline. On activate (hover/focus/active states) the hidden
@@ -76,34 +106,4 @@
             left: 0;
         }
     }
-}
-
-
-.link {
-    #palette;
-
-    // Force remove outline from any clickable objects. We've got
-    // pretty focus state.
-    outline: none;
-
-    color: @c2;
-    font-weight: 600;
-
-    // Remove text decoration from links.
-    text-decoration: none;
-
-
-    &_dir_ltr {
-        .underline-from-left();
-    }
-
-
-    &_dir_rtl {
-        .underline-from-right();
-    }
-}
-
-
-.link_hl_brand {
-    letter-spacing: .0625em;
 }
