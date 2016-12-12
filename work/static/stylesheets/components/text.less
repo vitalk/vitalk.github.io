@@ -1,37 +1,47 @@
 // Text.
 //
+// By size:
+//
+// .text_size_xs - Extra small text.
+// .text_size_s - Small text.
+//
+// By wrap:
+//
+// .text_wrap - Allow text wrapping.
+// .text_nowrap - Disallow text wrapping.
+//
 // By highlight.
 //
-// .text_hl_project - Per-project text highlighting.
+// .text_hl_page - Per-project text highlighting.
 
 
 .text {}
 
 
-.text--nowrap {
+.text_nowrap {
     white-space: nowrap !important;
 }
 
 
-.text--wrap {
+.text_wrap {
     white-space: normal !important;
 }
 
 
-.text--branded {}
-
-
-.text--small {
+.text_size_s {
     font-size: @classy-small-font-size;
 }
 
 
-.text--smaller {
+.text_size_xs {
     font-size: .75em;
 }
 
 
-.text_hl_project {
+.text_hl_brand {}
+
+
+.text_hl_page {
 
     // Use normal font weight (we use custom colour to emphasis instead).
     font-weight: normal;

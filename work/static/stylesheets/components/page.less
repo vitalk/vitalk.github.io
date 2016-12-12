@@ -15,8 +15,8 @@
     &__footer {
         @c: #e5e5e5;
 
-        .text--branded;
-        .text--small;
+        .text_hl_brand;
+        .text_size_s;
 
         // Add padding for more consistent vertical rhythm.
         padding-top: @unit;
@@ -38,7 +38,7 @@
         color: inherit;
 
         // Prevents wrapping tel number into multiple lines.
-        .text--nowrap;
+        .text_nowrap;
     }
 
 
@@ -59,7 +59,7 @@
 .colorize-page(@c) {
     .@{icon-namespace}__line { background: @c; }
     .contact-list__link:after { background: @c; }
-    .text_hl_project { color: @c; }
+    .text_hl_page { color: @c; }
 }
 
 
