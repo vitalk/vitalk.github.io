@@ -40,7 +40,6 @@ def copyright(input, out, **kwargs):
 
 
 cssmain = Bundle(
-    'vendor/flickity/dist/flickity.min.css',
     'stylesheets/main.less',
     debug=False,
     depends=('**/*.less'),
@@ -49,8 +48,6 @@ cssmain = Bundle(
 )
 
 scripts = Bundle(
-    'vendor/jquery/dist/jquery.min.js',
-    'vendor/flickity/dist/flickity.pkgd.js',
     'vendor/jquery-flyout/index.js',
     'scripts/main.js',
     filters=('jsmin', copyright),
