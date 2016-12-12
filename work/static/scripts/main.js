@@ -15,7 +15,7 @@
     flyout:     $('.flyout'),
     fadeable:   $('.js-banner,.project__info p'),
     scrollable: $('.js-scrollable'),
-    gallery:    $('.js-flickity-gallery')
+    gallery:    $('.js-gallery')
   };
 
   function App(opts) {
@@ -41,26 +41,35 @@
       var
         $el = $(this),
         opts = {
-          cellAlign: 'left',
-          wrapAround: true,
-          pageDots: true
-        },
-        flkty;
+          allowfullscreen: false,
+          arrows: false,
+          enableifsingleframe: true,
+          loop: true,
+        };
 
-      var flkty = $el.flickity(opts).data('flickity');
+      var fotorama = $el.fotorama(opts).data('fotorama');
+      var showcase = $el.closest('.project__showcase');
+      var mobileShowcase = $el.closest('.showcase__mobile');
+      var browserShowcase = $el.closest('.showcase__browser');
 
-      if ($el.closest('.mobile').length) {
-        $el.on('cellSelect', function() {
-          $el.closest('.project__showcase').find('.browser .js-flickity-gallery')
-             .flickity('select', flkty.selectedIndex);
-        })
+      if (mobileShowcase.length) {
+        $el.on('fotorama:show', function() {
+          showcase
+            .find('.showcase__browser')
+            .find(selector.gallery)
+            .data('fotorama')
+            .show(fotorama.activeIndex);
+        });
       };
 
-      if ($el.closest('.browser').length) {
-        $el.on('cellSelect', function() {
-          $el.closest('.project__showcase').find('.mobile .js-flickity-gallery')
-             .flickity('select', flkty.selectedIndex);
-        })
+      if (browserShowcase.length) {
+        $el.on('fotorama:show', function() {
+          showcase
+            .find('.showcase__mobile')
+            .find(selector.gallery)
+            .data('fotorama')
+            .show(fotorama.activeIndex);
+        });
       };
     });
   };
