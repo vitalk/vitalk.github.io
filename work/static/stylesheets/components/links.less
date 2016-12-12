@@ -80,9 +80,17 @@
 
 
 .link {
+    #palette;
+
     // Force remove outline from any clickable objects. We've got
     // pretty focus state.
     outline: none;
+
+    color: @c2;
+    font-weight: 600;
+
+    // Remove text decoration from links.
+    text-decoration: none;
 
 
     &_dir_ltr {
@@ -93,4 +101,9 @@
     &_dir_rtl {
         .underline-from-right();
     }
+}
+
+
+.link_hl_brand {
+    letter-spacing: .0625em;
 }
