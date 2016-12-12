@@ -15,13 +15,21 @@
 
 
     &_side-by-side {
-        // Keep only mobile preview on small screen.
-        .browser { display: none; }
 
-        // Ensure the preview is aligned to center of the viewport.
-        .mobile {
-            margin-left: auto; margin-right: auto;
+        .showcase__browser {
+
+            // Keep only mobile preview on small screen.
+            display: none;
         }
+
+
+        .showcase__mobile {
+
+            // Ensure the preview is aligned to center of the viewport.
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 
         // Explicitly remove gallery navigation button on small screen.
         .flickity-page-dots,
@@ -29,6 +37,7 @@
 
 
         @media @mobile {
+
             // Show gallery navigation buttons. Ensure they are don't
             // show above the screenshots.
             .flickity-prev-next-button {
@@ -42,8 +51,8 @@
 
         // Show only browser preview on tablet and hide a mobile one.
         @media @tablet {
-            .browser { display: block; }
-            .mobile { display: none; }
+            .showcase__browser { display: block; }
+            .showcase__mobile  { display: none; }
 
 
             // Display additional navigation dots.
@@ -55,7 +64,7 @@
         // browser window to ensure the mobile preview has enough space to
         // shown. Pull mobile preview to the right as well.
         @media @laptop-and-up {
-            .browser {
+            .showcase__browser {
                 display: block;
                 width: 85%;
 
@@ -69,7 +78,7 @@
                 }
             }
 
-            .mobile {
+            .showcase__mobile {
                 position: absolute;
                 right: 0;
                 bottom: -1em;
@@ -79,6 +88,7 @@
 
 
     &_truncate {
+
         // Limit the project preview height. Ensure the truncated part
         // is hidden.
         max-height: 30em;
@@ -93,6 +103,6 @@
         .browser__workspace { border-bottom: none; }
 
         // A little bit move mobile preview to hide bottom of the phone.
-        .mobile { bottom: -3em; }
+        .showcase__mobile { bottom: -3em; }
     }
 }
