@@ -13,6 +13,7 @@
 // By theme.
 //
 // .text_theme_inherit - Inherit theme from current page.
+// .text_theme_branded - Main theme for branded text.
 
 
 .text {}
@@ -38,11 +39,14 @@
 }
 
 
-.text_hl_brand {}
-
-
 .text_theme_inherit {
 
     // Use normal font weight (we use custom colour to emphasis instead).
     font-weight: normal;
+}
+
+
+.text_theme_branded {
+    letter-spacing: .1875em;
+    text-transform: uppercase;
 }
