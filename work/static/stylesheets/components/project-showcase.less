@@ -1,7 +1,7 @@
 // Project showcase.
 //
 // .project__showcase--mobile-list - Uses to show mobile preview in a list.
-// .project__showcase--side-by-side - Uses to show mobile and browser preview at the same line.
+// .project__showcase_side-by-side - Uses to show mobile and browser preview at the same line.
 .project__showcase {
     // Create a new position context, so browser and mobile previews can
     // be properly positioned.
@@ -11,7 +11,7 @@
     margin-bottom: 2* @unit;
 
 
-    &--side-by-side {
+    &_side-by-side {
         // Keep only mobile preview on small screen.
         .browser { display: none; }
 
@@ -75,7 +75,7 @@
    }
 
 
-    &--truncate {
+    &_truncate {
         // Limit the project preview height. Ensure the truncated part
         // is hidden.
         max-height: 30em;
