@@ -54,21 +54,27 @@
 
       if (mobileShowcase.length) {
         $el.on('fotorama:show', function() {
-          showcase
+          var gallery = showcase
             .find('.showcase__browser')
             .find(selector.gallery)
-            .data('fotorama')
-            .show(fotorama.activeIndex);
+            .data('fotorama');
+
+          if (gallery) {
+            gallery.show(fotorama.activeIndex);
+          }
         });
       };
 
       if (browserShowcase.length) {
         $el.on('fotorama:show', function() {
-          showcase
+          var gallery = showcase
             .find('.showcase__mobile')
             .find(selector.gallery)
-            .data('fotorama')
-            .show(fotorama.activeIndex);
+            .data('fotorama');
+
+          if (gallery) {
+            gallery.show(fotorama.activeIndex);
+          }
         });
       };
     });
