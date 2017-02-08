@@ -12,6 +12,10 @@
   {% endfor %}
 {% endmacro %}
 
+{% macro gallery_cell(filename, alt=none) %}
+  <img src="{{ url_for('static', filename='images/'~filename) }}" class="gallery__cell" alt="{{ alt }}">
+{% endmacro %}
+
 {% macro browser() %}
 <div class="browser showcase__browser">
   <div class="browser__panel">
@@ -84,17 +88,17 @@
       <div class="project__showcase showcase showcase_side-by-side">
         {% call browser() %}
           <div class="gallery js-gallery">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/landing-page_medium.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/create-offer_medium.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/offer-page_medium.png') }}" alt="">
+            {{ gallery_cell('woogle/landing-page_medium.png') }}
+            {{ gallery_cell('woogle/create-offer_medium.png') }}
+            {{ gallery_cell('woogle/offer-page_medium.png') }}
           </div>
         {% endcall %}
 
         {% call mobile() %}
           <div class="gallery js-gallery">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/landing-page_mobile.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/create-offer_mobile.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/woogle/offer-page_mobile.png') }}" alt="">
+            {{ gallery_cell('woogle/landing-page_mobile.png') }}
+            {{ gallery_cell('woogle/create-offer_mobile.png') }}
+            {{ gallery_cell('woogle/offer-page_mobile.png') }}
           </div>
         {% endcall %}
       </div>
@@ -137,12 +141,12 @@
       <div class="project__showcase showcase showcase_side-by-side">
         {% call browser() %}
           <a href="//matfiz.by" target="_blank" title="Перейти на сайт">
-            <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page_medium.png') }}" alt="">
+            {{ gallery_cell('artsiom-kozlovskiy-site/landing-page_medium.png') }}
           </a>
         {% endcall %}
         {% call mobile() %}
           <a href="//matfiz.by" target="_blank" title="Перейти на сайт">
-            <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page_mobile.png') }}" alt="">
+            {{ gallery_cell('artsiom-kozlovskiy-site/landing-page_mobile.png') }}
           </a>
         {% endcall %}
       </div>
@@ -168,17 +172,17 @@
       <div class="project__showcase showcase showcase_side-by-side">
         {% call browser() %}
           <div class="gallery js-gallery">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list_medium.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page_medium.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests_medium.png') }}" alt="">
+            {{ gallery_cell('artsiom-kozlovskiy-site/scholars-list_medium.png') }}
+            {{ gallery_cell('artsiom-kozlovskiy-site/scholar-page_medium.png') }}
+            {{ gallery_cell('artsiom-kozlovskiy-site/accepted-requests_medium.png') }}
           </div>
         {% endcall %}
 
         {% call mobile() %}
           <div class="gallery js-gallery">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholars-list_mobile.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/scholar-page_mobile.png') }}" alt="">
-            <img class="gallery__cell" src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/accepted-requests_mobile.png') }}" alt="">
+            {{ gallery_cell('artsiom-kozlovskiy-site/scholars-list_mobile.png') }}
+            {{ gallery_cell('artsiom-kozlovskiy-site/scholar-page_mobile.png') }}
+            {{ gallery_cell('artsiom-kozlovskiy-site/accepted-requests_mobile.png') }}
           </div>
         {% endcall %}
       </div>
@@ -223,11 +227,11 @@
 
       <div class="project__showcase showcase showcase_side-by-side">
         {% call browser() %}
-          <img src="{{ url_for('static', filename='images/flask-styleguide/living-styleguide_medium.png') }}" alt="">
+          {{ gallery_cell('flask-styleguide/living-styleguide_medium.png') }}
         {% endcall %}
 
         {% call mobile() %}
-          <img src="{{ url_for('static', filename='images/flask-styleguide/living-styleguide_mobile.png') }}" alt="">
+          {{ gallery_cell('flask-styleguide/living-styleguide_mobile.png') }}
         {% endcall %}
       </div>
     </div>
