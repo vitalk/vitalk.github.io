@@ -73,11 +73,11 @@
 
       <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
         {% call b.browser() %}
-          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
+          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page_medium.png') }}" alt="">
         {% endcall %}
 
         {% call b.mobile() %}
-          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--2.png') }}" alt="">
+          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page_mobile.png') }}" alt="">
         {% endcall %}
       </div>
     </div>
@@ -164,8 +164,8 @@
 
       <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
         {% call b.browser() %}
-          <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
-        {% endcall %}
+          <img src="{{ url_for('static',
+          filename='images/woogle/landing-page--1.png') }}" alt=""> {% endcall %}
 
         {% call b.mobile() %}
           <img src="{{ url_for('static', filename='images/woogle/landing-page--2.png') }}" alt="">
