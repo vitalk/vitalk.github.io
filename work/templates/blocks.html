@@ -106,6 +106,88 @@
   </article>
 {% endmacro %}
 
+{% macro vashi_sushi() %}
+  <article class="project project_vs">
+    <div class="l-wrapper">
+      <div class="project__info">
+        <div class="l-layout">
+          <div class="l-layout__item s-marketing 3/4@lap+">
+            <div class="s-marketing__title">Проект</div>
+
+            <p class="lead">
+               <strong class="project__name">&laquo;Ваши&nbsp;Суши&raquo;</strong>&nbsp;&mdash;
+               магазин суши и&nbsp;другой азиатской кухни с&nbsp;доставкой
+               по&nbsp;городу Молодечно.
+            </p>
+
+            <p>Для компании создан интернет-магазин, посетителей которого
+               встречает яркая витрина из&nbsp;доступных блюд и&nbsp;реклама
+               действующих акций.
+            </p>
+          </div>
+
+          <div class="l-layout__item s-marketing 1/4@lap+">
+            <div class="s-marketing__title">Детали</div>
+
+            <div class="project__tagline">
+              <span class="project__tag">Концепция</span>
+              <span class="project__tag">Проектирование</span>
+              <span class="project__tag">Дизайн интерфейса</span>
+              <span class="project__tag">Разработка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project__showcase showcase showcase_side-by-side">
+        {% call browser() %}
+          <div class="gallery js-gallery">
+            {{ gallery_cell('vashi-sushi/menu_medium.png') }}
+            {{ gallery_cell('vashi-sushi/contact-page_medium.png') }}
+          </div>
+        {% endcall %}
+
+        {% call mobile() %}
+          <div class="gallery js-gallery">
+            {{ gallery_cell('vashi-sushi/menu_mobile.png') }}
+            {{ gallery_cell('vashi-sushi/contact-page_mobile.png') }}
+          </div>
+        {% endcall %}
+      </div>
+
+      <div class="project__info">
+        <div class="l-layout">
+          <div class="l-layout__item s-marketing 3/4@lap+">
+            <div class="s-marketing__title">Оформление заказа</div>
+
+            <p>Посетители получают доступ к магазину <strong>с&nbsp;любых
+               устройств</strong>, быстрее оформляют заказы и легче
+               ориентируются среди множества доступных блюд.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project__showcase showcase showcase_side-by-side">
+        {% call browser() %}
+          <div class="gallery js-gallery">
+            {{ gallery_cell('vashi-sushi/ura-maki_medium.png') }}
+            {{ gallery_cell('vashi-sushi/checkout-shipping_medium.png') }}
+            {{ gallery_cell('vashi-sushi/checkout-confirmation_medium.png') }}
+          </div>
+        {% endcall %}
+
+        {% call mobile() %}
+          <div class="gallery js-gallery">
+            {{ gallery_cell('vashi-sushi/ura-maki_mobile.png') }}
+            {{ gallery_cell('vashi-sushi/checkout-shipping_mobile.png') }}
+            {{ gallery_cell('vashi-sushi/checkout-confirmation_mobile.png') }}
+          </div>
+        {% endcall %}
+      </div>
+    </div>
+  </article>
+{% endmacro %}
+
 {% macro artsiom_site() %}
   <article class="project project_mf">
     <div class="l-wrapper">

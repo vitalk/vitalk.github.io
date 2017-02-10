@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
-{% block page_title %}Сайт репетитора Артёма Леонидовича Козловского{% endblock %}
-{% block bodyclass %}page page_theme_mf{% endblock %}
+{% block page_title %}Разработка интернет-магазина &laquo;Ваши&nbsp;Суши&raquo;&nbsp;&mdash; магазина суши и&nbsp;других азиатских продуктов{% endblock %}
+{% block bodyclass %}page page_theme_vs{% endblock %}
 {% block pagehead %}
 <header class="hero hero_p_s hero_align_l i-am-a-hero" role="banner">
   <div class="l-wrapper">
@@ -11,18 +11,19 @@
   </div>
 </header>
 {% endblock %}
+
 {% block main %}
-{{ b.artsiom_site() }}
+  {{ b.vashi_sushi() }}
 {% endblock %}
+
 {% block contentinfo %}
 <nav class="hero pagination">
   <div class="l-wrapper">
-    <a href="{{ url_for('.work', slug='vashi-sushi-shop') }}">
+    <a href="{{ url_for('.work', slug='woogle') }}">
       <h3 class="pagination__subtitle">Следующий проект</h3>
-      <h1 class="pagination__title">Ваши&nbsp;Суши</h1>
-      <p class="pagination__text">
-         Магазин суши и&nbsp;другой азиатской кухни с&nbsp;доставкой.
-      </p>
+      <h1 class="pagination__title">Woogle</h1>
+      <p class="pagination__text">Современный сервис аренды недвижимости в
+         Минске, с удобным поиском и уведомлениями.</p>
     </a>
   </div>
 </nav>
