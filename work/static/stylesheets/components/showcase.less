@@ -68,6 +68,10 @@
                 display: block;
                 width: 85%;
 
+                // Explicitly set min height of browser element to prevents
+                // weird jumps of mobile element when browser image is loaded.
+                min-height: 30em;
+
                 // Show gallery navigation button only for browser preview.
                 // Ensure they are don't show above the screenshots.
                 .flickity-prev-next-button {
