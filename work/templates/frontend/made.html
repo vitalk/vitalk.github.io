@@ -175,51 +175,5 @@
     </div>
   </article>
 
-  <article class="project project_woogle">
-    <div class="l-wrapper">
-      <div class="project__info">
-        <div class="l-layout">
-          <div class="l-layout__item s-marketing 3/4@lap+">
-            <div class="s-marketing__title">Проект</div>
-
-            <p class="lead">
-               <strong class="project__name">Woogle</strong> — современный
-               сервис аренды недвижимости в Минске, с <strong>удобным поиском
-               и уведомлениями</strong> о новых объявлениях.</p>
-
-            <p>Каждый, кто хоть раз пытался снять квартиру или комнату, знает
-               на сколько это утомительный процесс. Когда я приступал к
-               разработке <strong>Woogle</strong>, мне хотелось исправить эту
-               ситуацию.</p>
-
-            <a href="{{ url_for('.work', slug='woogle') }}"
-               class="link link_dir_ltr project__link" title="Читать статью полностью">Читать дальше</a>
-          </div>
-
-          <div class="l-layout__item s-marketing 1/4@lap+">
-            <div class="s-marketing__title">Детали</div>
-
-            <div class="project__tagline">
-              <span class="project__tag">Проектирование</span>
-              <span class="project__tag">Дизайн интерфейса</span>
-              <span class="project__tag">Разработка</span>
-              <span class="project__tag">Поддержка</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
-        {% call b.browser() %}
-          {{ b.gallery_cell('woogle/landing-page_size_m.jpg') }}
-        {% endcall %}
-
-        {% call b.mobile() %}
-          {{ b.gallery_cell('woogle/landing-page_mobile.jpg') }}
-        {% endcall %}
-      </div>
-    </div>
-  </article>
-
 </section>
 {% endblock %}

@@ -28,7 +28,7 @@ class TestWork:
 
     @pytest.mark.parametrize('work', [
         ('artsiom-kozlovskiy-site'),
-        ('woogle'),
+        ('vashi-sushi-shop'),
         ('flask-styleguide'),
     ])
     def test_render(self, client, work):
