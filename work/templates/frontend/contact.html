@@ -34,10 +34,10 @@
 </section>
 {% endblock %}
 {% block contentinfo %}
-<footer class="hero">
-  <div class="l-wrapper">
-    {{ b.social_nav() }}
+  <div class="hero">
+    <div class="l-wrapper">
+      {% include 'b/social-nav.html' %}
+    </div>
   </div>
-</footer>
 {% endblock %}
-{% block contentinfoextra %}{% endblock %}
+{% block copyrights %}{% endblock %}
