@@ -52,7 +52,7 @@
     </footer>
 
     {% block jsmain %}
-      {% if config.debug -%}
+      {% if config.DEBUG -%}
       <script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':1350/livereload.js"><\/script>')</script>
       {% endif %}
 
