@@ -7,11 +7,13 @@
         // Stack list items on mobile.
         display: block;
 
-        // Ensure the list items are shown at center of the viewport.
-        margin-left: 0;
-
-        // Ensure the gap between items on mobile exists.
+        // Ensure the gap between items exists when items stacked
+        // vertically...
         margin-bottom: @unit;
+
+        // ...as well as when they stacked horizontally.
+        margin-left: 1em;
+        margin-right: 1em;
 
 
         &:last-child {
@@ -22,11 +24,9 @@
     }
 
 
+    &__item,
     &__link {
         .text_theme_branded;
-
-        margin-left: 1em;
-        margin-right: 1em;
     }
 
 
