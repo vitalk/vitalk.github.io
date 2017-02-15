@@ -7,11 +7,7 @@
         margin-right: 5em;
 
         // Decrease font size on small screen and increase on the bigger one.
-        font-size: 1.2em;
-
-        @media @laptop-and-up {
-            font-size: @classy-h5-size;
-        }
+        font-size: @classy-h6-size;
     }
 
 
@@ -27,6 +23,11 @@
             // Limit the container’s width for better readability
             // on laptop and above.
             width: 70%;
+        }
+
+
+        .@{hero-namespace}__title {
+            font-size: @classy-h5-size;
         }
     }
 }
