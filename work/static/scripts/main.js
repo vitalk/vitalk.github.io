@@ -94,7 +94,8 @@
     selector.flyout.flyout({
       debug: this.opts.debug,
       namespace: 'about-me',
-      trigger: {open: '.js-flyout'}
+      trigger: {open: '.js-flyout'},
+      className: {opened: 'flyout_open'}
     })
   };
 
