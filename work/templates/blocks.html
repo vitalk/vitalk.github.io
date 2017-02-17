@@ -40,6 +40,12 @@
 </div>
 {% endmacro %}
 
+{% macro showcase(class='showcase_side-by-side project__showcase') %}
+  <div class="showcase{% if class %} {{ class }}{% endif %}">
+    {{ caller() }}
+  </div>
+{% endmacro %}
+
 {% macro vashi_sushi() %}
   <article class="project project_vs">
     <div class="l-wrapper">
@@ -73,7 +79,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_side-by-side">
+      {% call showcase() %}
         {% call browser() %}
           <div class="gallery js-gallery">
             {{ gallery_cell('vashi-sushi/menu_size_m.jpg') }}
@@ -87,7 +93,7 @@
             {{ gallery_cell('vashi-sushi/contact-page_mobile.jpg') }}
           </div>
         {% endcall %}
-      </div>
+      {% endcall %}
 
       <div class="project__info">
         <div class="l-layout">
@@ -101,7 +107,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_side-by-side">
+      {% call showcase() %}
         {% call browser() %}
           <div class="gallery js-gallery">
             {{ gallery_cell('vashi-sushi/ura-maki_size_m.jpg') }}
@@ -117,7 +123,7 @@
             {{ gallery_cell('vashi-sushi/checkout-confirmation_mobile.png') }}
           </div>
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 {% endmacro %}
@@ -154,7 +160,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_side-by-side">
+      {% call showcase() %}
         {% call browser() %}
           <a href="//matfiz.by" target="_blank" title="Перейти на сайт">
             {{ gallery_cell('artsiom-kozlovskiy-site/landing-page_size_m.png') }}
@@ -165,7 +171,7 @@
             {{ gallery_cell('artsiom-kozlovskiy-site/landing-page_mobile.png') }}
           </a>
         {% endcall %}
-      </div>
+      {% endcall %}
 
       <div class="project__info">
         <div class="l-layout">
@@ -185,7 +191,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_side-by-side">
+      {% call showcase() %}
         {% call browser() %}
           <div class="gallery js-gallery">
             {{ gallery_cell('artsiom-kozlovskiy-site/scholars-list_size_m.png') }}
@@ -201,7 +207,7 @@
             {{ gallery_cell('artsiom-kozlovskiy-site/accepted-requests_mobile.png') }}
           </div>
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 {% endmacro %}
@@ -241,7 +247,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_side-by-side">
+      {% call showcase() %}
         {% call browser() %}
           {{ gallery_cell('flask-styleguide/living-styleguide_size_m.png') }}
         {% endcall %}
@@ -249,7 +255,7 @@
         {% call mobile() %}
           {{ gallery_cell('flask-styleguide/living-styleguide_mobile.png') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 {% endmacro %}

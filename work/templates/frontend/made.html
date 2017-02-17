@@ -98,7 +98,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
+      {% call b.showcase('showcase_truncate showcase_side-by-side project__showcase') %}
         {% call b.browser() %}
           {{ b.gallery_cell('vashi-sushi/menu_size_m.jpg') }}
         {% endcall %}
@@ -106,7 +106,7 @@
         {% call b.mobile() %}
           {{ b.gallery_cell('vashi-sushi/menu_mobile.jpg') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 
@@ -144,7 +144,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
+      {% call b.showcase('showcase_truncate showcase_side-by-side project__showcase') %}
         {% call b.browser() %}
           {{ b.gallery_cell('artsiom-kozlovskiy-site/landing-page_size_m.png') }}
         {% endcall %}
@@ -152,7 +152,7 @@
         {% call b.mobile() %}
           {{ b.gallery_cell('artsiom-kozlovskiy-site/landing-page_mobile.png') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 
@@ -189,7 +189,7 @@
         </div>
       </div>
 
-      <div class="project__showcase showcase showcase_truncate showcase_side-by-side">
+      {% call b.showcase('showcase_truncate showcase_side-by-side project__showcase') %}
         {% call b.browser() %}
           {{ b.gallery_cell('flask-styleguide/living-styleguide_size_m.png') }}
         {% endcall %}
@@ -197,7 +197,7 @@
         {% call b.mobile() %}
           {{ b.gallery_cell('flask-styleguide/living-styleguide_mobile.png') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 
