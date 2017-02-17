@@ -14,6 +14,35 @@
     margin-bottom: 2* @unit;
 
 
+    &__button {
+        // Show navigation buttons at each side of the showcase.
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        // Ensure the navigation buttons shown above the content itself.
+        z-index: @z-index-masthead - 1;
+
+
+        &_prev { left:  -1%; }
+        &_next { right: -1%; text-align: right; }
+
+
+        @media @laptop {
+
+            &_prev { left:  -5%; }
+            &_next { right: -5%; }
+        }
+
+
+        @media @desktop {
+
+            &_prev { left:  -6%; }
+            &_next { right: -6%; }
+        }
+    }
+
+
     &_side-by-side {
 
         .showcase__browser {

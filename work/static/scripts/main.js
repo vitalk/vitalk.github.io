@@ -15,7 +15,8 @@
     flyout:     $('.flyout'),
     fadeable:   $('.js-banner,.project__info p'),
     scrollable: $('.js-scrollable'),
-    gallery:    $('.js-gallery')
+    gallery:    $('.js-gallery'),
+    showcase:   $('.showcase')
   };
 
   function App(opts) {
@@ -37,46 +38,54 @@
   App.prototype.initGallery = function() {
     this.log('Initializing image gallery');
 
-    selector.gallery.each(function() {
+    selector.showcase.each(function() {
       var
-        $el = $(this),
+        mobileShowcase,
+        browserShowcase,
         opts = {
           allowfullscreen: false,
           arrows: false,
           enableifsingleframe: true,
           loop: true,
-        };
+          nav: false
+        },
+        showcase = $(this),
+        mobile = showcase.find('.showcase__mobile').find(selector.gallery),
+        browser = showcase.find('.showcase__browser').find(selector.gallery),
+        nextButton = showcase.find('.showcase__button_next'),
+        previousButton = showcase.find('.showcase__button_prev'),
+        hasNavigation = showcase.find('.showcase__button').length;
 
-      var fotorama = $el.fotorama(opts).data('fotorama');
-      var showcase = $el.closest('.project__showcase');
-      var mobileShowcase = $el.closest('.showcase__mobile');
-      var browserShowcase = $el.closest('.showcase__browser');
+      mobileShowcase = mobile && mobile.fotorama(opts).data('fotorama');
+      browserShowcase = browser && browser.fotorama(opts).data('fotorama');
 
-      if (mobileShowcase.length) {
-        $el.on('fotorama:show', function() {
-          var gallery = showcase
-            .find('.showcase__browser')
-            .find(selector.gallery)
-            .data('fotorama');
+      if (mobileShowcase && browserShowcase) {
+        mobile.on('fotorama:show', function() {
+          browserShowcase.show(mobileShowcase.activeIndex);
+        });
 
-          if (gallery) {
-            gallery.show(fotorama.activeIndex);
+        browser.on('fotorama:show', function() {
+          mobileShowcase.show(browserShowcase.activeIndex);
+        });
+      }
+
+      if (hasNavigation) {
+        nextButton.on('click', function() {
+          if (mobileShowcase) {
+            mobileShowcase.show('>');
+          } else if (browserShowcase) {
+            browserShowcase.show('>');
           }
         });
-      };
 
-      if (browserShowcase.length) {
-        $el.on('fotorama:show', function() {
-          var gallery = showcase
-            .find('.showcase__mobile')
-            .find(selector.gallery)
-            .data('fotorama');
-
-          if (gallery) {
-            gallery.show(fotorama.activeIndex);
+        previousButton.on('click', function() {
+          if (mobileShowcase) {
+            mobileShowcase.show('<');
+          } else if (browserShowcase) {
+            browserShowcase.show('<');
           }
         });
-      };
+      }
     });
   };
 
