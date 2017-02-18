@@ -5,12 +5,12 @@
     #palette;
     @z: 5;
 
-    width: 14em;
-    height: 26.58358em;
-
     // Create a new position context, so the screen and case
     // can be properly positioned.
     position: relative;
+
+    width: 14em;
+    height: 26.58358em;
 
     // Prevents user's interactions.
     user-select: none;
@@ -20,9 +20,9 @@
     &__screen {
         position: absolute;
         top: 2.5em;
+        right: .222222em;
         bottom: 2.5em;
         left: .222222em;
-        right: .222222em;
 
         // Ensure the screen shown above the case.
         z-index: (@z + 1);
@@ -37,12 +37,15 @@
     // Mobile case.
     &__case {
         position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         z-index: @z;
+
+        background: darken(@c,5);
 
         // Rounded corners.
         border-radius: 1.444em;
-
-        background: darken(@c, 5);
     }
 }

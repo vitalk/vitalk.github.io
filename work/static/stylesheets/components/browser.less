@@ -13,47 +13,48 @@
     &__panel {
         padding: .5em;
 
-        // Rounded corners.
-        border-radius: @bor @bor 0 0;
+        // Contains only floated elements, prevents box collapse.
+        overflow: hidden;
 
         // Semi-transparent background allow uses project colour palette
         // to colorize browser pane.
         background: @c;
 
-        // Contains only floated elements, prevents box collapse.
+        // Rounded corners.
+        border-radius: @bor @bor 0 0;
+    }
+
+
+    // Browser dots.
+    &__dots {
+
+        // Pull them to the left.
+        float: left;
+
+        // Browser dots are floated to ensure they shown inline. Prevents
+        // box collapse.
         overflow: hidden;
     }
 
 
-        // Browser dots.
-        &__dots {
+    // Browser dot.
+    &__dot {
+        // Show them in a line.
+        float: left;
 
-            // Pull them to the left.
-            float: left;
+        width: .5em;
+        height: .5em;
 
-            // Browser dots are floated to ensure they shown inline. Prevents
-            // box collapse.
-            overflow: hidden;
-        }
+        // Add a gap between them.
+        margin-right: .3em;
 
-
-            // Browser dot.
-            &__dot {
-                width: .5em;
-                height: .5em;
-                border-radius: 50%;
-
-                // Show them in a line.
-                float: left;
-
-                // Add a gap between them.
-                margin-right: .3em;
+        border-radius: 50%;
 
 
-                &:nth-child(1) { background: #fe7772; }
-                &:nth-child(2) { background: #feba56; }
-                &:nth-child(3) { background: #41c65d; }
-            }
+        &:nth-child(1) { background: #fe7772; }
+        &:nth-child(2) { background: #feba56; }
+        &:nth-child(3) { background: #41c65d; }
+    }
 
 
     // Browser workspace.

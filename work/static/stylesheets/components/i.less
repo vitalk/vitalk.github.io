@@ -9,10 +9,10 @@
     @x: 2.5em;
     @y: (@x / 8 * 1em);
 
-    width: @x;
-    height: @x;
     position: relative;
     z-index: @z-index-masthead;
+    width: @x;
+    height: @x;
 
     // Icons are clickable elements.
     cursor: pointer;
@@ -25,11 +25,12 @@
         width: @x;
         height: @y;
         margin-bottom: @y;
-        transition: width .3s cubic-bezier(.15, 1, .2, 1);
+        transition: width .3s cubic-bezier(.15,1,.2,1);
     }
 
 
     &-close {
+
         .@{icon-namespace}__line {
             position: absolute;
             top: @x/2;
@@ -42,6 +43,7 @@
 
 
     &-menu {
+
         .@{icon-namespace}__line {
             float: right;
 
@@ -53,12 +55,10 @@
 
         &:hover,
         &:focus {
-            .@{icon-namespace}__line {
-                &_1 { width: 80%; }
-                &_2 { width: 90%; }
-                &_3 { width: 100%; }
-                &_4 { width: 65%; }
-            }
+            .i__line_1 { width: 80%; }
+            .i__line_2 { width: 90%; }
+            .i__line_3 { width: 100%; }
+            .i__line_4 { width: 65%; }
         }
     }
 
@@ -68,16 +68,18 @@
         // Freeze the open navigation menu button at the upper-right corner.
         // Ensure it shown above the close button.
         position: fixed;
-        top: 3/2* @unit;
-        right: 3/2* @unit;
+        top: 3/2 * @unit;
+        right: 3/2 * @unit;
     }
 
 
     .masthead &-close {
         float: right;
 
+        /* stylelint-disable */
                 .@{icon-namespace}__line { background: @c1; }
         &:hover .@{icon-namespace}__line,
         &:focus .@{icon-namespace}__line { background: @c2; }
+        /* stylelint-enable */
     }
 }
