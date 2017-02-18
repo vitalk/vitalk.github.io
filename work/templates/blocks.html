@@ -55,13 +55,13 @@
 {% macro showcase(class='showcase_side-by-side project__showcase', has_nav=false) %}
   <div class="showcase{% if class %} {{ class }}{% endif %}">
     {% if has_nav %}
-      <div class="showcase__button showcase__button_prev" role="button">
+      <button class="showcase__button showcase__button_prev" role="button">
         {{ i_left() }}
-      </div>
+      </button>
 
-      <div class="showcase__button showcase__button_next" role="button">
+      <button class="showcase__button showcase__button_next" role="button">
         {{ i_right() }}
-      </div>
+      </button>
     {% endif %}
 
     {{ caller() }}
