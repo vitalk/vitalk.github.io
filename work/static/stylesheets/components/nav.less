@@ -1,9 +1,16 @@
 // Main site navigation.
 
 
-.nav li {
-    padding-top: @unit/8;
-    padding-bottom: @unit/8;
+.nav {
+
+    &__item {
+
+        // Ensure there is no margin between items in navigation.
+        margin-bottom: 0;
+
+        padding-top: @unit/8;
+        padding-bottom: @unit/8;
+    }
 }
 
 
@@ -70,8 +77,8 @@
 
     // Reuse page colors for each navigation item for consistency.
     a {
-        &.portfolio:before { #palette--portfolio; background: @c; }
-        &.projects:before  { #palette--projects;  background: @c; }
-        &.contact:before   { #palette--contact;   background: @c; }
+        &.portfolio:before { #palette_portfolio; background: @c; }
+        &.projects:before  { #palette_projects;  background: @c; }
+        &.contact:before   { #palette_contact;   background: @c; }
     }
 }

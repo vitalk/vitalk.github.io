@@ -15,7 +15,8 @@
     flyout:     $('.flyout'),
     fadeable:   $('.js-banner,.project__info p'),
     scrollable: $('.js-scrollable'),
-    gallery:    $('.js-flickity-gallery')
+    gallery:    $('.js-gallery'),
+    showcase:   $('.showcase')
   };
 
   function App(opts) {
@@ -37,31 +38,54 @@
   App.prototype.initGallery = function() {
     this.log('Initializing image gallery');
 
-    selector.gallery.each(function() {
+    selector.showcase.each(function() {
       var
-        $el = $(this),
+        mobileShowcase,
+        browserShowcase,
         opts = {
-          cellAlign: 'left',
-          wrapAround: true,
-          pageDots: true
+          allowfullscreen: false,
+          arrows: false,
+          enableifsingleframe: true,
+          loop: true,
+          nav: false
         },
-        flkty;
+        showcase = $(this),
+        mobile = showcase.find('.showcase__mobile').find(selector.gallery),
+        browser = showcase.find('.showcase__browser').find(selector.gallery),
+        nextButton = showcase.find('.showcase__button_next'),
+        previousButton = showcase.find('.showcase__button_prev'),
+        hasNavigation = showcase.find('.showcase__button').length;
 
-      var flkty = $el.flickity(opts).data('flickity');
+      mobileShowcase = mobile && mobile.fotorama(opts).data('fotorama');
+      browserShowcase = browser && browser.fotorama(opts).data('fotorama');
 
-      if ($el.closest('.mobile').length) {
-        $el.on('cellSelect', function() {
-          $el.closest('.project__showcase').find('.browser .js-flickity-gallery')
-             .flickity('select', flkty.selectedIndex);
-        })
-      };
+      if (mobileShowcase && browserShowcase) {
+        mobile.on('fotorama:show', function() {
+          browserShowcase.show(mobileShowcase.activeIndex);
+        });
 
-      if ($el.closest('.browser').length) {
-        $el.on('cellSelect', function() {
-          $el.closest('.project__showcase').find('.mobile .js-flickity-gallery')
-             .flickity('select', flkty.selectedIndex);
-        })
-      };
+        browser.on('fotorama:show', function() {
+          mobileShowcase.show(browserShowcase.activeIndex);
+        });
+      }
+
+      if (hasNavigation) {
+        nextButton.on('click', function() {
+          if (mobileShowcase) {
+            mobileShowcase.show('>');
+          } else if (browserShowcase) {
+            browserShowcase.show('>');
+          }
+        });
+
+        previousButton.on('click', function() {
+          if (mobileShowcase) {
+            mobileShowcase.show('<');
+          } else if (browserShowcase) {
+            browserShowcase.show('<');
+          }
+        });
+      }
     });
   };
 
@@ -79,7 +103,8 @@
     selector.flyout.flyout({
       debug: this.opts.debug,
       namespace: 'about-me',
-      trigger: {open: '.js-flyout'}
+      trigger: {open: '.js-flyout'},
+      className: {opened: 'flyout_open'}
     })
   };
 

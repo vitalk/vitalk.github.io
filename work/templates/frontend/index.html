@@ -1,25 +1,26 @@
 {% extends 'layout.html' %}
-{% block bodyclass %}page page--portfolio{% endblock %}
+{% block bodyclass %}page page_theme_portfolio{% endblock %}
 {% block pagehead %}
 <header class="hero standfirst-hero" role="heading">
   <div class="l-wrapper">
     <h1 class="hero__title js-banner">
-      Я <strong class="highlight highlight--project">проектирую</strong>
-      интерфейсы и <strong class="highlight highlight--project">разрабатываю</strong>
-      сайты, сервисы и веб-приложения, которыми
-      <strong class="highlight highlight--project">удобно и приятно</strong>
-      пользоваться.</h1>
+      Я <strong class="text text_theme_inherit">проектирую</strong>
+      интерфейсы и <strong class="text text_theme_inherit">разрабатываю</strong>
+      сайты, сервисы и <span class="text text_nowrap">веб-приложения</span>,
+      которыми <strong class="text text_theme_inherit">удобно
+      и приятно</strong> пользоваться.
+    </h1>
 
     <div class="hero__content">
-      <a class="link link--ltr hero__link js-scrollable" href="/#works"
+      <a class="link link_dir_ltr hero__link js-scrollable" href="/#works"
          title="Посмотреть избранные проекты">Избранные проекты</a>
     </div>
   </div>
 </header>
 {% endblock %}
 {% block main %}
-<section class="entry entry--projects" id="works">
-  <article class="project project--mf">
+<section class="entry" id="works">
+  <article class="project project_mf">
     <div class="l-wrapper">
       <div class="project__info">
         <div class="l-layout">
@@ -27,17 +28,17 @@
             <div class="s-marketing__title">Проект</div>
 
             <p class="lead">
-               <strong class="project__name">Артём Леонидович</strong> — талантливый
-               репетитор по математике и физике с современным подходом к
-               обучению.</p>
+               <strong class="project__name">Артём Леонидович</strong> —
+               талантливый репетитор по математике и физике с современным
+               подходом к обучению.</p>
 
-            <p>Кроме создания <strong>яркого и запоминающегося
-               образа</strong>, в мою задачу входила разработка простой и
-               удобной системы для обработки заявок на обучение и мониторинга
-               успеваемости учеников.</p>
+            <p>Кроме создания <strong>яркого и запоминающегося
+               образа</strong>, в мою задачу входила разработка простой
+               и удобной системы для обработки заявок на обучение
+               и мониторинга успеваемости учеников.</p>
 
             <a href="{{ url_for('.work', slug='artsiom-kozlovskiy-site') }}"
-               class="link link--ltr project__link" title="Читать статью полностью">Читать дальше</a>
+               class="link link_dir_ltr project__link" title="Читать статью полностью">Читать дальше</a>
           </div>
 
           <div class="l-layout__item s-marketing 1/4@lap+">
@@ -53,62 +54,63 @@
         </div>
       </div>
 
-      <div class="project__showcase project__showcase--truncate project__showcase--side-by-side">
+      {% call b.showcase('showcase_truncate showcase_side-by-side project__showcase') %}
         {% call b.browser() %}
-          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--1.png') }}" alt="">
+          {{ b.gallery_cell('artsiom-kozlovskiy-site/landing-page_size_m.png') }}
         {% endcall %}
 
         {% call b.mobile() %}
-          <img src="{{ url_for('static', filename='images/artsiom-kozlovskiy-site/landing-page--2.png') }}" alt="">
+          {{ b.gallery_cell('artsiom-kozlovskiy-site/landing-page_mobile.png') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
 
-  <article class="project project--woogle">
+  <article class="project project_vs">
     <div class="l-wrapper">
       <div class="project__info">
         <div class="l-layout">
           <div class="l-layout__item s-marketing 3/4@lap+">
-             <div class="s-marketing__title">Проект</div>
+            <div class="s-marketing__title">Проект</div>
 
-             <p class="lead">
-                <strong class="project__name">Woogle</strong> — современный
-                сервис аренды недвижимости в Минске, с <strong>удобным поиском
-                и уведомлениями</strong> о новых объявлениях.</p>
+            <p class="lead">
+               <strong class="project__name">«Ваши Суши»</strong> —
+               магазин суши и другой азиатской кухни с доставкой
+               по городу Молодечно.
 
-             <p>Каждый, кто хоть раз пытался снять квартиру или комнату, знает
-                на сколько это утомительный процесс. Когда я приступал к
-                разработке <strong>Woogle</strong>, мне хотелось исправить эту
-                ситуацию.</p>
+            <p>Для компании создан интернет-магазин, посетителей которого
+               встречает яркая витрина из доступных блюд и реклама
+               действующих акций.
+            </p>
 
-             <a href="{{ url_for('.work', slug='woogle') }}"
-                class="link link--ltr project__link" title="Читать статью полностью">Читать дальше</a>
+            <a href="{{ url_for('.work', slug='vashi-sushi-shop') }}"
+               class="link link_dir_ltr project__link" title="Читать статью полностью">Читать дальше</a>
           </div>
 
           <div class="l-layout__item s-marketing 1/4@lap+">
             <div class="s-marketing__title">Детали</div>
 
             <div class="project__tagline">
+              <span class="project__tag">Концепция</span>
               <span class="project__tag">Проектирование</span>
               <span class="project__tag">Дизайн интерфейса</span>
               <span class="project__tag">Разработка</span>
-              <span class="project__tag">Поддержка</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="project__showcase project__showcase--truncate project__showcase--side-by-side">
+      {% call b.showcase('showcase_truncate showcase_side-by-side project__showcase') %}
         {% call b.browser() %}
-          <img src="{{ url_for('static', filename='images/woogle/landing-page--1.png') }}" alt="">
+          {{ b.gallery_cell('vashi-sushi/menu_size_m.jpg') }}
         {% endcall %}
 
         {% call b.mobile() %}
-          <img src="{{ url_for('static', filename='images/woogle/landing-page--2.png') }}" alt="">
+          {{ b.gallery_cell('vashi-sushi/menu_mobile.jpg') }}
         {% endcall %}
-      </div>
+      {% endcall %}
     </div>
   </article>
+
 </section>
 {% endblock %}

@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
-{% block bodyclass %}page page--contact{% endblock %}
+{% block page_title %}Свяжитесь со мной – Виталий Куделка – Разработка сайтов и веб-приложений{% endblock %}
+{% block bodyclass %}page page_theme_contact{% endblock %}
 {% block main %}
 <section class="entry">
   <div class="l-wrapper">
@@ -7,21 +8,64 @@
       <div class="l-layout__item s-marketing 3/5@lap+">
         <div class="s-marketing__title">Свяжитесь со мной</div>
 
-        <p class="lead">Если вы, так же как и я, увлечены своим делом,
-           <strong class="highlight highlight--project">вместе</strong> мы
-           сможем создать отличный продукт.</p>
+        <p class="lead">
+           Если вы, так же как и я, увлечены своим делом,
+           то <strong>вместе</strong> мы сможем создать отличный продукт.
+        </p>
 
-        <p><strong>Свяжитесь со мной</strong>, если у вас есть какие-либо
-           вопросы или вы хотите обсудить детали сотрудничества.</p>
+        <p>
+           Чтобы сэкономить всем время, прежде чем связаться со мной,
+           обратите внимание на некоторые вопросы:
+        </p>
+
+        <ul class="list">
+            <li>
+              <strong>Если вам нужен кто-то, кто быстро и дёшево сделает вам
+              сайт.</strong> Стоимость разработки и время, затраченное на неё,
+              напрямую связаны с качеством результата, и я не хочу жертвовать
+              качеством в угоду чему-либо.
+              Поэтому, либо <em>«качественно, быстро, но дорого»</em>,
+              либо <em>«качественно, дёшево, но долго»</em>.
+            </li>
+
+            <li>
+              <strong>Если вам нужен результат прямо сейчас.</strong>
+              <em>Иногда</em> я могу приступить к работе прямо сейчас, но
+              зачастую мне нужно выполнить обязательства по другим проектам
+              прежде чем приступить к вашему. Обычно, интервал между вашим
+              обращением ко мне и стартом работы над вашим проектом составляет
+              <em>около 1 недели</em>.
+            </li>
+
+            <li>
+              <strong>Если вам нужно продвижение сайта,</strong> то я могу
+              дать рекомендации по его оптимизации для поисковых систем
+              и улучшению его позиции в поисковой выдаче, но я не занимаюсь
+              продвижением сайтов.
+            </li>
+        </ul>
+
+        <p class="lead">
+          Итак, если у вас остались какие-либо вопросы или вы хотите обсудить
+          детали сотрудничества, то <strong>свяжитесь со мной</strong> любым
+          удобным способом.
+        </p>
+
       </div>
 
-      <div class="l-layout__item s-marketing s-marketing--rev 2/5@lap+">
+      <div class="l-layout__item s-marketing s-marketing_dir_rtl 2/5@lap+">
         <div class="s-marketing__title">Контакты</div>
 
-        <ul class="nav nav--vertical contact-list">
-          <li><a class="link link--rtl" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a></li>
-          <li><a class="link link--rtl" href="mailto:vital.kudzelka@gmail.com?subject=Я хочу хороший сайт"
-                 title="Напишите мне письмо">vital.kudzelka@gmail.com</a></li>
+        <ul class="nav nav_vertical contact-list">
+          <li class="nav__item contact-list__item">
+            <a class="nav__link contact-list__link link link_dir_rtl" href="tel:+375293358679" title="Позвоните мне">+375 29 335-86-79</a>
+          </li>
+
+          <li class="nav__item contact-list__item">
+            <a class="nav__link contact-list__link link link_dir_rtl"
+               href="mailto:vital.kudzelka@gmail.com?subject=Я хочу обсудить делали сотрудничества"
+               title="Напишите мне письмо">vital.kudzelka@gmail.com</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -29,10 +73,10 @@
 </section>
 {% endblock %}
 {% block contentinfo %}
-<footer class="hero">
-  <div class="l-wrapper">
-    {{ b.social_nav() }}
+  <div class="hero">
+    <div class="l-wrapper">
+      {% include 'b/social-nav.html' %}
+    </div>
   </div>
-</footer>
 {% endblock %}
-{% block contentinfoextra %}{% endblock %}
+{% block copyrights %}{% endblock %}

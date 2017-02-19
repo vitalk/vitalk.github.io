@@ -6,7 +6,7 @@
     @z: 5;
 
     width: 14em;
-    height: 25.3125em;
+    height: 26.58358em;
 
     // Create a new position context, so the screen and case
     // can be properly positioned.
@@ -26,6 +26,9 @@
 
         // Ensure the screen shown above the case.
         z-index: (@z + 1);
+
+        // Hide overflowed parts of the screenshot.
+        overflow: hidden;
 
         background: @b;
     }

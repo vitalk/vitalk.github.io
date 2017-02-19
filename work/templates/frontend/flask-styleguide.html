@@ -1,13 +1,12 @@
 {% extends 'layout.html' %}
-{% block page_title %}Как создать и поддерживать в актуальном состоянии библиотеку компонентов для вашего сайта или веб-приложения{% endblock %}
-{% block bodyclass %}page page--oss{% endblock %}
+{% block bodyclass %}page page_theme_oss{% endblock %}
 {% block pagehead %}
-<header class="hero hero--small hero--left i-am-a-hero js-banner" role="banner">
+<header class="hero hero_p_s hero_align_l i-am-a-hero js-banner" role="banner">
   <div class="l-wrapper">
     <h1 class="hero__title" role="heading">
-       Я <strong class="highlight highlight--project">люблю</strong> и постоянно
-       использую <strong class="highlight highlight--project">открытое
-       программное обеспечение</strong> в своих проектах.</h1>
+       Я <strong class="text text_theme_inherit">люблю</strong> и постоянно
+       использую <strong class="text text_theme_inherit">открытое
+       программное обеспечение</strong> в своих проектах.</h1>
   </div>
 </header>
 {% endblock %}
@@ -25,14 +24,14 @@
   </div>
 </nav>
 
-<section class="hero hero--responsive thank-you-hero">
+<section class="hero hero_p_responsive thank-you-hero">
   <div class="l-wrapper">
     <h1 class="hero__title">Спасибо</h1>
-    <p>За то что уделили время на просмотр моих работ. Если вам что-то
-       понравилось или у вас есть какие-либо вопросы, то <strong>свяжитесь со
-       мной</strong> любым удобным способом.</p>
+    <p>За то что уделили время на просмотр моих работ. Если вам что-то
+       понравилось или у вас есть какие-либо вопросы, то <strong>свяжитесь
+       со мной</strong> любым удобным способом.</p>
 
-    {{ b.social_nav() }}
+    {% include 'b/social-nav.html' %}
   </div>
 </section>
 {% endblock %}

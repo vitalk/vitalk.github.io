@@ -1,6 +1,6 @@
 // Marketing section.
 //
-// .s-marketing--rev - Align column title to the right and show dash before it.
+// .s-marketing_dir_rtl - Align column title to the right and show dash before it.
 
 
 @marketing-namespace: s-marketing;
@@ -9,14 +9,11 @@
 .@{marketing-namespace} {
 
     &__title {
-        .text--smaller;
-        .header--branded;
+        .text_size_s;
+        .text_theme_branded;
 
         // Use single-direction margin.
         margin-bottom: @unit;
-
-        // Mute text column.
-        color: #d6d6d8;
 
         // Show dash after the column.
         &:after { content: ' –'; }
@@ -24,7 +21,7 @@
 
 
     // Reverse column title direction.
-    &--rev {
+    &_dir_rtl {
         .@{marketing-namespace}__title {
             text-align: right;
 

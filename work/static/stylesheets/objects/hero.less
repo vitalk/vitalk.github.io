@@ -1,8 +1,13 @@
 // We're need a HERO!
 //
-// .hero--responsive - Used to adjust hero spacing on mobile and above.
-// .hero--small - Used to decrease vertical padding.
-// .hero--left - Used to align text to left.
+// By padding:
+//
+// .hero_p_responsive - Used to adjust hero spacing on mobile and above.
+// .hero_p_s - Used to decrease vertical padding.
+//
+// By text alignment:
+//
+// .hero_align_l - Used to align text to left.
 
 
 @hero-namespace: hero;
@@ -18,20 +23,14 @@
 }
 
 
-.@{hero-namespace}--small {
+.@{hero-namespace}_p_s {
     // More empty space to breeze.
     padding-top: 2* @unit;
     padding-bottom: 2* @unit;
 }
 
 
-.@{hero-namespace}--left {
-    // Align text to left.
-    text-align: left;
-}
-
-
-.@{hero-namespace}--responsive {
+.@{hero-namespace}_p_responsive {
     // Decrease box padding on mobile.
     padding-top: 2* @unit;
     padding-bottom: 2* @unit;
@@ -42,4 +41,10 @@
         padding-top: 4* @unit;
         padding-bottom: 4* @unit;
     }
+}
+
+
+.@{hero-namespace}_align_l {
+    // Align text to left.
+    text-align: left;
 }

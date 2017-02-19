@@ -1,0 +1,54 @@
+// Text.
+//
+// By size:
+//
+// .text_size_xs - Extra small text.
+// .text_size_s - Small text.
+//
+// By wrap:
+//
+// .text_wrap - Allow text wrapping.
+// .text_nowrap - Disallow text wrapping.
+//
+// By theme.
+//
+// .text_theme_inherit - Inherit theme from current page.
+// .text_theme_branded - Main theme for branded text.
+
+
+.text {}
+
+
+.text_nowrap {
+    white-space: nowrap !important;
+}
+
+
+.text_wrap {
+    white-space: normal !important;
+}
+
+
+.text_size_s {
+    font-size: @classy-small-font-size;
+}
+
+
+.text_size_xs {
+    font-size: .75em;
+}
+
+
+.text_theme_inherit {
+
+    // Use normal font weight (we use custom colour to emphasis instead).
+    font-weight: normal;
+}
+
+
+.text_theme_branded {
+    font-weight: 700;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    letter-spacing: .1875em;
+    text-transform: uppercase;
+}

@@ -7,13 +7,11 @@
 
 
     &__subtitle {
-        .text--smaller;
-        .header--branded;
+        .text_theme_branded;
+        .text_size_xs;
 
         // Use single-direction margin.
         margin-bottom: @unit/2;
-
-        color: #d6d6d8;
 
         // Refine typography by adding some styling before and after element.
         &:after  { content: ' –'; }
@@ -23,11 +21,8 @@
 
     &__title {
         // Increase font size and weight to emphasis title.
-        font-size: 1.25em;
-        font-weight: bold;
-
-        // Increase the inter-character space for better look.
-        letter-spacing: .375em;
+        font-size: @classy-lead-font-size;
+        font-weight: 600;
 
         // Decrease margin below to ensure more consistent vertical rhythm.
         margin-bottom: @unit/2;
@@ -41,8 +36,7 @@
 
 
     &__text {
-        .text--small;
-        .text--branded;
+        .text_size_s;
 
         // The block located inside the link element, which is bold by
         // default. Ensure the text has normal weight.

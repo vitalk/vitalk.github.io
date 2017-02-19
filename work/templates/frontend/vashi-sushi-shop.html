@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block page_title %}Магазин азиатской кухни «Ваши Суши» – Виталий Куделка – Разработка сайтов и веб-приложений{% endblock %}
+{% block bodyclass %}page page_theme_vs{% endblock %}
+{% block pagehead %}
+<header class="hero hero_p_s hero_align_l i-am-a-hero" role="banner">
+  <div class="l-wrapper">
+    <h1 class="hero__title js-banner" role="heading">
+      Я <strong class="text text_theme_inherit">проектирую интерфейсы</strong>
+      для мобильных устройств и разрабатываю сайты, которыми
+      <strong class="text text_theme_inherit">удобно и приятно</strong> пользоваться.</h1>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+  {{ b.vashi_sushi() }}
+{% endblock %}
+
+{% block contentinfo %}
+<nav class="hero pagination">
+  <div class="l-wrapper">
+    <a href="{{ url_for('.work', slug='flask-styleguide') }}">
+      <h3 class="pagination__subtitle">Следующий проект</h3>
+      <h1 class="pagination__title">Flask-Styleguide</h1>
+      <p class="pagination__text">Простой способ создать библиотеку компонентов
+         для любого сайта или веб-приложения.</p>
+    </a>
+  </div>
+</nav>
+
+<section class="hero hero_p_responsive thank-you-hero">
+  <div class="l-wrapper">
+    <h1 class="hero__title">Спасибо</h1>
+    <p>За то что уделили время на просмотр моих работ. Если вам что-то
+       понравилось или у вас есть какие-либо вопросы, то <strong>свяжитесь
+       со мной</strong> любым удобным способом.</p>
+
+    {% include 'b/social-nav.html' %}
+  </div>
+</section>
+{% endblock %}

@@ -17,13 +17,11 @@
     "classy-images": "~0.2.1",
     "classy-lists": "~0.2.0",
     "classy-media-queries": "~0.1.0",
-    "classy-nav": "~0.2.0",
+    "classy-nav": "~0.3.1",
     "classy-page": "~0.2.0",
     "classy-snippets": "~0.1.0",
     "classy-typography": "~0.2.0",
-    "lesshat": "~3.0.2",
     "jquery": "~2.1.4",
     "jquery-flyout": "~0.0.2",
-    "flickity": "~1.1.0"
   }
 }

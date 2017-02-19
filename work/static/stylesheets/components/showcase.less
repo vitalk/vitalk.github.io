@@ -1,0 +1,121 @@
+// Showcase.
+//
+// .showcase_truncate - Uses to truncate showcase preview.
+// .showcase_side-by-side - Uses to show mobile and browser preview at the same line.
+
+
+.showcase {
+
+    // Create a new position context, so browser and mobile previews can
+    // be properly positioned.
+    position: relative;
+
+    // Add margin bellow.
+    margin-bottom: 2* @unit;
+
+
+    &__button {
+        // Show navigation buttons at each side of the showcase.
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        // Add a little padding for better look.
+        padding: @unit/4;
+
+        // Ensure the navigation buttons shown above the content itself.
+        z-index: @z-index-masthead - 1;
+
+        // Remove default decoration from button.
+        background: white;
+        background: rgba(255,255,255,.75);
+        border: none;
+
+        // Ensure the button is round.
+        border-radius: 50%;
+
+
+        &_prev { left:  -1%; }
+        &_next { right: -1%; text-align: right; }
+
+
+        @media @laptop {
+
+            &_prev { left:  -5%; }
+            &_next { right: -5%; }
+        }
+
+
+        @media @desktop {
+
+            &_prev { left:  -6%; }
+            &_next { right: -6%; }
+        }
+    }
+
+
+    &_side-by-side {
+
+        .showcase__browser {
+
+            // Keep only mobile preview on small screen.
+            display: none;
+        }
+
+
+        .showcase__mobile {
+
+            // Ensure the preview is aligned to center of the viewport.
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        // Show only browser preview on tablet and hide a mobile one.
+        @media @tablet {
+            .showcase__browser { display: block; }
+            .showcase__mobile  { display: none; }
+        }
+
+
+        // Show browser and mobile preview side by side. Limit the width of
+        // browser window to ensure the mobile preview has enough space to
+        // shown. Pull mobile preview to the right as well.
+        @media @laptop-and-up {
+            .showcase__browser {
+                display: block;
+                width: 85%;
+
+                // Explicitly set min height of browser element to prevents
+                // weird jumps of mobile element when browser image is loaded.
+                min-height: 30em;
+            }
+
+            .showcase__mobile {
+                position: absolute;
+                right: 0;
+                bottom: -1em;
+            }
+        }
+   }
+
+
+    &_truncate {
+
+        // Limit the project preview height. Ensure the truncated part
+        // is hidden.
+        max-height: 30em;
+        overflow: hidden;
+
+        // Remove margin when showcase is truncated.
+        margin-bottom: 0;
+
+
+        // Explicitly remove bottom border from browser workspace to prevents
+        // doubled border when showcase is truncated.
+        .browser__workspace { border-bottom: none; }
+
+        // A little bit move mobile preview to hide bottom of the phone.
+        .showcase__mobile { bottom: -3em; }
+    }
+}
