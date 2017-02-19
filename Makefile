@@ -13,6 +13,7 @@ help:
 	@echo " clean		to cleanup the package directory"
 	@echo " install	to install requirements into environment"
 	@echo " serv		to run dev server"
+	@echo " lint		to lint application (python, javascript and stylesheets)"
 	@echo " test 		to run the test suite"
 	@echo " watch		to enable livereload on assets changes"
 	@echo " freeze		to freeze applicaion"
