@@ -28,7 +28,8 @@ serv:
 
 .PHONY: lint
 lint:
-	@stylelint "work/static/stylesheets/**/*.less" -s less
+	standard "work/static/scripts/**/*.js"
+	stylelint -s less "work/static/stylesheets/**/*.less"
 
 .PHONY: test
 test: lint
