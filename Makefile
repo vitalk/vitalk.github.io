@@ -22,7 +22,11 @@ install:
 serv:
 	@python setup.py serve -d -r -p 5009 --host '0.0.0.0'
 
-test:
+.PHONY: lint
+lint:
+	@stylelint "work/static/stylesheets/**/*.less" -s less
+
+test: lint
 	@python setup.py test -q
 
 watch:
