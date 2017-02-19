@@ -71,32 +71,10 @@
         }
 
 
-        // Explicitly remove gallery navigation button on small screen.
-        .flickity-page-dots,
-        .flickity-prev-next-button { display: none; }
-
-
-        @media @mobile {
-
-            // Show gallery navigation buttons. Ensure they are don't
-            // show above the screenshots.
-            .flickity-prev-next-button {
-                display: block;
-
-                &.previous { left:  -22%; }
-                &.next     { right: -22%; }
-            }
-        }
-
-
         // Show only browser preview on tablet and hide a mobile one.
         @media @tablet {
             .showcase__browser { display: block; }
             .showcase__mobile  { display: none; }
-
-
-            // Display additional navigation dots.
-            .flickity-page-dots { display: block; }
         }
 
 
@@ -111,15 +89,6 @@
                 // Explicitly set min height of browser element to prevents
                 // weird jumps of mobile element when browser image is loaded.
                 min-height: 30em;
-
-                // Show gallery navigation button only for browser preview.
-                // Ensure they are don't show above the screenshots.
-                .flickity-prev-next-button {
-                    display: block;
-
-                    &.previous { left: -6.5%; }
-                    &.next     { right: -24%; }
-                }
             }
 
             .showcase__mobile {
