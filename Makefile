@@ -37,7 +37,7 @@ lint:
 test: lint
 	@python setup.py test -q
 
-.PHONY: freeze
+.PHONY: watch
 watch:
 	@grunt watch
 
