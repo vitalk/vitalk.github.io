@@ -29,8 +29,12 @@ def read_json(*parts):
 package = read_json(os.path.dirname(__file__), os.pardir, 'package.json')
 
 # Create copyright placeholder at init time.
-banner = ('/*! {name} {version} | (c) {year} {author} | http://opensource.org/licenses/{license}\n'
-          ' */\n'.format(year=datetime.today().year, **package))
+banner = (
+    '/*! {name} {version} | (c) {year} {author} | '
+    'http://opensource.org/licenses/{license}\n */\n'.format(
+        year=datetime.today().year, **package
+    )
+)
 
 
 def copyright(input, out, **kwargs):

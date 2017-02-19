@@ -19,5 +19,5 @@ class freeze(command):
 
     def run(self):
         from ..extensions import freezer
-        app = self.create_app()
+        self.create_app()
         freezer.freeze()

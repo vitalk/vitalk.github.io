@@ -28,6 +28,7 @@ serv:
 
 .PHONY: lint
 lint:
+	flake8
 	standard
 	stylelint -s less "work/static/stylesheets/**/*.less"
 
