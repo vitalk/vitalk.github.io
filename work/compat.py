@@ -16,11 +16,11 @@ PY2 = sys.version_info[0] == 2
 
 
 if PY2:
-    text_type = unicode
+    text_type = unicode  # noqa: F821
     binary_type = str
-    string_types = basestring,
-    unicode = unicode
-    basestring = basestring
+    string_types = basestring,  # noqa: F821
+    unicode = unicode  # noqa: F821
+    basestring = basestring  # noqa: F821
 else:
     text_type = str
     binary_type = bytes
