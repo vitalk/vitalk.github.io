@@ -35,7 +35,7 @@ class command(Command):
 
 
 # Fix possible circular imports.
-from . import (
+from . import (  # noqa: F401
     freezer,
     serve,
     test,

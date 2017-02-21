@@ -14,18 +14,18 @@
         margin-bottom: @unit/2;
 
         // Refine typography by adding some styling before and after element.
-        &:after  { content: ' –'; }
+        &:after { content: ' –'; }
         &:before { content: '– '; }
     }
 
 
     &__title {
+        // Decrease margin below to ensure more consistent vertical rhythm.
+        margin-bottom: @unit/2;
+
         // Increase font size and weight to emphasis title.
         font-size: @classy-lead-font-size;
         font-weight: 600;
-
-        // Decrease margin below to ensure more consistent vertical rhythm.
-        margin-bottom: @unit/2;
     }
 
 
@@ -38,14 +38,14 @@
     &__text {
         .text_size_s;
 
-        // The block located inside the link element, which is bold by
-        // default. Ensure the text has normal weight.
-        font-weight: normal;
-
         // Limit the width of block for better readability and center it to
         // the viewport.
         max-width: 30em;
         margin: 0 auto;
+
+        // The block located inside the link element, which is bold by
+        // default. Ensure the text has normal weight.
+        font-weight: normal;
     }
 
 
@@ -54,15 +54,16 @@
     @media @laptop-and-up {
 
         &__text {
-            opacity: 0;
             transform: scale(1.1);
-            transition: opacity .3s,
-                        transform .3s;
+            opacity: 0;
+            transition:
+                opacity .3s,
+                transform .3s;
 
             .pagination:hover &,
             .pagination:focus & {
-                opacity: 1;
                 transform: scale(1);
+                opacity: 1;
             }
         }
     }

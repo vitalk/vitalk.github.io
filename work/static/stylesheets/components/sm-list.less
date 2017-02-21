@@ -8,12 +8,10 @@
         display: block;
 
         // Ensure the gap between items exists when items stacked
-        // vertically...
-        margin-bottom: @unit;
-
-        // ...as well as when they stacked horizontally.
-        margin-left: 1em;
+        // horizontally or vertically.
         margin-right: 1em;
+        margin-bottom: @unit;
+        margin-left: 1em;
 
 
         &:last-child {
@@ -31,6 +29,7 @@
 
 
     @media @laptop-and-up {
+
         &__item {
             // Show list items in a row.
             display: inline-block;

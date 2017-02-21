@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
 
@@ -15,7 +14,7 @@ module.exports = function(grunt) {
     connect: {
       options: {
         hostname: 'localhost',
-        port: 5009,
+        port: 5009
       },
 
       serve: {
@@ -23,7 +22,7 @@ module.exports = function(grunt) {
           // Prevents Grunt to close just after the task (starting the server)
           // completes
           keepalive: true,
-          livereload: '<%= watch.options.livereload %>',
+          livereload: '<%= watch.options.livereload %>'
         }
       }
     },
@@ -44,15 +43,14 @@ module.exports = function(grunt) {
       }
     }
 
-  });
+  })
 
   // Cleanup source directory
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-clean')
 
   // The Big Brother watching you
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch')
 
   // Development server with live reload
-  grunt.loadNpmTasks('grunt-contrib-connect');
-
-};
+  grunt.loadNpmTasks('grunt-contrib-connect')
+}

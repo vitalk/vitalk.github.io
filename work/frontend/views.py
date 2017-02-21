@@ -11,7 +11,6 @@
 from flask import (
     abort,
     Blueprint,
-    redirect,
     render_template,
     request,
     url_for,
@@ -31,7 +30,6 @@ def site_nav():
         [url_for('frontend.made'), u'Работы'],
         [url_for('frontend.contact'), u'Контакты'],
     ), [request.endpoint, request.view_args])
-
 
 
 @frontend.route('/')

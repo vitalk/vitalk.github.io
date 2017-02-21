@@ -9,15 +9,16 @@
 .link {
     #palette;
 
-    // Force remove outline from any clickable objects. We've got
-    // pretty focus state.
-    outline: none;
-
-    color: @c2;
     font-weight: 600;
 
     // Remove text decoration from links.
     text-decoration: none;
+
+    color: @c2;
+
+    // Force remove outline from any clickable objects. We've got
+    // pretty focus state.
+    outline: none;
 
 
     &_dir_ltr {
@@ -52,13 +53,13 @@
 
     &:after,
     &:before {
-        content: "";
         position: absolute;
-        z-index: -1;
-        left: 0;
         right: 0;
-        bottom: -2*.125em;
-        height:    .125em;
+        bottom: -2 * .125em;
+        left: 0;
+        z-index: -1;
+        height: .125em;
+        content: "";
 
         background: @c1;
         transition: right .3s ease-out;

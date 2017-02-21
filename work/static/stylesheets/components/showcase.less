@@ -11,7 +11,7 @@
     position: relative;
 
     // Add margin bellow.
-    margin-bottom: 2* @unit;
+    margin-bottom: 2 * @unit;
 
 
     &__button {
@@ -20,11 +20,11 @@
         top: 50%;
         transform: translateY(-50%);
 
-        // Add a little padding for better look.
-        padding: @unit/4;
-
         // Ensure the navigation buttons shown above the content itself.
         z-index: @z-index-masthead - 1;
+
+        // Add a little padding for better look.
+        padding: @unit/4;
 
         // Remove default decoration from button.
         background: white;
@@ -35,20 +35,20 @@
         border-radius: 50%;
 
 
-        &_prev { left:  -1%; }
-        &_next { right: -1%; text-align: right; }
+        &_prev { left: -1%; }
+        &_next { right: -1%; text-align: right; } /* stylelint-disable-line */
 
 
         @media @laptop {
 
-            &_prev { left:  -5%; }
+            &_prev { left: -5%; }
             &_next { right: -5%; }
         }
 
 
         @media @desktop {
 
-            &_prev { left:  -6%; }
+            &_prev { left: -6%; }
             &_next { right: -6%; }
         }
     }
@@ -66,15 +66,15 @@
         .showcase__mobile {
 
             // Ensure the preview is aligned to center of the viewport.
-            margin-left: auto;
             margin-right: auto;
+            margin-left: auto;
         }
 
 
         // Show only browser preview on tablet and hide a mobile one.
         @media @tablet {
             .showcase__browser { display: block; }
-            .showcase__mobile  { display: none; }
+            .showcase__mobile { display: none; }
         }
 
 
@@ -82,6 +82,7 @@
         // browser window to ensure the mobile preview has enough space to
         // shown. Pull mobile preview to the right as well.
         @media @laptop-and-up {
+
             .showcase__browser {
                 display: block;
                 width: 85%;
@@ -97,18 +98,19 @@
                 bottom: -1em;
             }
         }
-   }
+    }
 
 
     &_truncate {
 
-        // Limit the project preview height. Ensure the truncated part
-        // is hidden.
+        // Limit the project preview height.
         max-height: 30em;
-        overflow: hidden;
 
         // Remove margin when showcase is truncated.
         margin-bottom: 0;
+
+        // Ensure the truncated part is hidden.
+        overflow: hidden;
 
 
         // Explicitly remove bottom border from browser workspace to prevents

@@ -3,19 +3,19 @@
 
 .standfirst-@{hero-namespace} {
 
-    // Ensure the standfirst component occupies a whole available screen.
-    height: 100vh;
+    // Create a new positional context, e.g. inner elements is properly
+    // positioned.
+    position: relative;
 
     // Limit the container max width for the sake of readability.
     max-width: 54em;
 
-    // Ensure the block is properly aligned horizontally.
-    margin-left: auto;
-    margin-right: auto;
+    // Ensure the standfirst component occupies a whole available screen.
+    height: 100vh;
 
-    // Create a new positional context, e.g. inner elements is properly
-    // positioned.
-    position: relative;
+    // Ensure the block is properly aligned horizontally.
+    margin-right: auto;
+    margin-left: auto;
 
     text-align: center;
 
@@ -26,8 +26,8 @@
         // between viewport.
         position: absolute;
         top: 50%;
-        left: 3%;
         right: 3%;
+        left: 3%;
         transform: translateY(-50%);
 
         // Smaller font size on mobile, so the hero content is visible on
@@ -38,13 +38,12 @@
 
 
     .@{hero-namespace}__content {
-
         // Show element at center of the container with a gap
         // at bottom of the viewport.
         position: absolute;
+        right: 0;
         bottom: @unit;
         left: 0;
-        right: 0;
     }
 
 

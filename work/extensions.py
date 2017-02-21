@@ -10,8 +10,8 @@
     :copyright: (c) 2016 by Vital Kudzelka <vital.kudzelka@gmail.com>
     :license: MIT
 """
-from flask_frozen import Freezer
-freezer = Freezer()
-
 from flask_cache import Cache
+from flask_frozen import Freezer
+
 cache = Cache()
+freezer = Freezer()
