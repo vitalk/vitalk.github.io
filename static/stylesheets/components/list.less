@@ -1,0 +1,26 @@
+
+
+.list {
+
+    // Use single-direction margins declarations.
+    margin-bottom: @unit;
+
+    // Add a consistent padding for list items on mobile and increase it on
+    // laptop and above.
+    padding-left: @unit;
+
+    // Circle-style decoration for list items.
+    list-style: circle;
+
+
+    @media @laptop-and-up {
+        padding-left: (@unit + 1em);
+    }
+}
+
+
+.list__item {
+
+    // Add a consistent margin between list items.
+    margin-bottom: @unit/2;
+}

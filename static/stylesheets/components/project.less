@@ -1,0 +1,38 @@
+// Project.
+
+
+.project {
+    // Add more empty space to breeze.
+    padding-top: 2 * @unit;
+
+    border-bottom: solid 1px #d6d6d6;
+
+
+    &__name {
+        // Emphasis the name of the project.
+        font-weight: 600;
+    }
+
+
+    &__link {
+        // Force link to display as block to ensure the margin applied as
+        // expected.
+        display: inline-block;
+
+        // Use single-direction margin.
+        margin-bottom: @unit;
+    }
+
+
+    &__tag {
+        .text_size_s;
+
+        // Show tag inline when space is enough.
+        display: inline-block;
+
+        // Add a gap between tags.
+        margin-right: @unit;
+
+        padding: .5em 0;
+    }
+}

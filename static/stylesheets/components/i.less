@@ -1,0 +1,85 @@
+// Pure CSS icons. Required some extra markup for proper work.
+//
+// Styleguide @ref.
+
+@icon-namespace: i;
+
+.@{icon-namespace} {
+    #palette;
+    @x: 2.5em;
+    @y: (@x / 8 * 1em);
+
+    position: relative;
+    z-index: @z-index-masthead;
+    width: @x;
+    height: @x;
+
+    // Icons are clickable elements.
+    cursor: pointer;
+
+    // Prevents icon outline, define the focus state instead.
+    outline: none;
+
+
+    &__line {
+        width: @x;
+        height: @y;
+        margin-bottom: @y;
+        transition: width .3s cubic-bezier(.15,1,.2,1);
+    }
+
+
+    &-close {
+
+        .@{icon-namespace}__line {
+            position: absolute;
+            top: @x/2;
+            left: 0;
+
+            &_1 { transform: rotate(45deg); }
+            &_2 { transform: rotate(-45deg); }
+        }
+    }
+
+
+    &-menu {
+
+        .@{icon-namespace}__line {
+            float: right;
+
+            &_1 { width: 95%; }
+            &_2 { width: 80%; }
+            &_3 { width: 65%; }
+            &_4 { width: 100%; }
+        }
+
+        &:hover,
+        &:focus {
+            .i__line_1 { width: 80%; }
+            .i__line_2 { width: 90%; }
+            .i__line_3 { width: 100%; }
+            .i__line_4 { width: 65%; }
+        }
+    }
+
+
+    .masthead &-menu {
+
+        // Freeze the open navigation menu button at the upper-right corner.
+        // Ensure it shown above the close button.
+        position: fixed;
+        top: 3/2 * @unit;
+        right: 3/2 * @unit;
+    }
+
+
+    .masthead &-close {
+        float: right;
+
+        /* stylelint-disable */
+                .@{icon-namespace}__line { background: @c1; }
+        &:hover .@{icon-namespace}__line,
+        &:focus .@{icon-namespace}__line { background: @c2; }
+        /* stylelint-enable */
+    }
+}

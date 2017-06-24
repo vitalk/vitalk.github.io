@@ -1,0 +1,34 @@
+
+
+.i-am-a-@{hero-namespace} {
+
+    .@{hero-namespace}__title {
+        // Ensure the page navigation don't overflow the hero's content.
+        margin-right: 4em;
+
+        // Decrease font size on small screen and increase on the bigger one.
+        font-size: @classy-h6-size;
+    }
+
+
+    .@{hero-namespace}__link {
+        display: inline-block;
+        margin-bottom: 2 * @unit;
+    }
+
+
+    @media @laptop-and-up {
+
+        .@{hero-namespace}__content {
+
+            // Limit the container’s width for better readability
+            // on laptop and above.
+            width: 70%;
+        }
+
+
+        .@{hero-namespace}__title {
+            font-size: @classy-h5-size;
+        }
+    }
+}

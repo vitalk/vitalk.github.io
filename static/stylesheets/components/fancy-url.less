@@ -1,0 +1,56 @@
+// Fancy url.
+
+
+// Fancy dot.
+.fancy-dot() {
+    position: absolute;
+    top: .600962em;          // 25px
+    display: inline-block;
+    width: .192308em;        // 8px
+    height: .192308em;       // 8px
+    margin-left: -.600962em; // 25px
+    content: '';
+
+    border-radius: 100%;
+}
+
+
+.fancy-url {
+    // Create a new position context.
+    position: relative;
+
+    // Add margin before to ensure it's enought space to show fancy dot.
+    margin-left: 2em;
+
+    // Remove outline; define focus state instead.
+    outline: none;
+
+
+    // Show fancy dot before each navigation item and reveal it on hover.
+    // Always show dot before active item.
+    &:before {
+        .fancy-dot();
+
+        opacity: 0;
+    }
+
+    &:hover:before,
+    &:focus:before,
+    &.is-active:before {
+        opacity: 1;
+    }
+
+
+    // Force enable pointer events for active navigation item to ensure
+    // the animations are launched.
+    &.is-active {
+        pointer-events: auto !important;
+    }
+
+
+    // Animate fancy dot for active navigation item and others
+    // only on hover/focus.
+    &:hover:before,
+    &:focus:before     { animation: yes      5s infinite ease .3s; } /* stylelint-disable-line */
+    &.is-active:before { animation: nooo-o-o 5s infinite ease 1s; } /* stylelint-disable-line */
+}

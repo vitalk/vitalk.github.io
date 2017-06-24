@@ -1,0 +1,43 @@
+// Layout.
+
+
+@layout-namespace: l-layout;
+
+
+.@{layout-namespace} {
+    // Negates the columns' gutters.
+    margin-left: -2 * @unit;
+
+    // Collapse white spaces caused by `inline-block` elements.
+    letter-spacing: -.31em;
+    word-spacing: -.43em;
+
+
+    // Vertical align columns at middle of the line.
+    &--middle {
+        .@{layout-namespace}__item { vertical-align: middle; }
+    }
+}
+
+
+.@{layout-namespace}__item {
+    // Stack columns side by side.
+    display: inline-block;
+
+    // Get the whole width.
+    width: 100%;
+
+    // Ensure the margin between items exists when they are
+    // stacked above each other.
+    margin-bottom: @unit;
+
+    // Space them apart.
+    padding-left: 2 * @unit;
+
+    // Restore whitespace removed by `.layout`.
+    letter-spacing: normal;
+    word-spacing: normal;
+
+    // Align columns on top of each other.
+    vertical-align: top;
+}

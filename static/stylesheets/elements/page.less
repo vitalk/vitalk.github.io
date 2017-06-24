@@ -1,0 +1,21 @@
+// Page-level styling.
+
+
+html {
+    // Use sans-serif font for bodycopy. Ensure the user defined font size
+    // don't overrides.
+    font: ~'normal 100%/@{classy-line-height-ratio} @{classy-sans-serif-font-family}';
+}
+
+
+body {
+    #palette;
+
+    // Improve font rendering on OSX (the default method better only for dark
+    // text on light backgrounds).
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    // Mute text colour.
+    color: @c;
+}

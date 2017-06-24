@@ -1,0 +1,51 @@
+// Mobile phone.
+//
+// Styleguide @ref.
+.mobile {
+    #palette;
+    @z: 5;
+
+    // Create a new position context, so the screen and case
+    // can be properly positioned.
+    position: relative;
+
+    width: 14em;
+    height: 26.58358em;
+
+    // Prevents user's interactions.
+    user-select: none;
+
+
+    // Mobile screen.
+    &__screen {
+        position: absolute;
+        top: 2.5em;
+        right: .222222em;
+        bottom: 2.5em;
+        left: .222222em;
+
+        // Ensure the screen shown above the case.
+        z-index: (@z + 1);
+
+        // Hide overflowed parts of the screenshot.
+        overflow: hidden;
+
+        background: @b;
+    }
+
+
+    // Mobile case.
+    &__case {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: @z;
+
+        background: darken(@c,5);
+
+        // Rounded corners.
+        border-radius: 1.444em;
+    }
+}

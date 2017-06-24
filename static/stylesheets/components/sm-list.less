@@ -1,0 +1,39 @@
+// List of social media links.
+
+
+.sm-list {
+
+    &__item {
+        // Stack list items on mobile.
+        display: block;
+
+        // Ensure the gap between items exists when items stacked
+        // horizontally or vertically.
+        margin-right: 1em;
+        margin-bottom: @unit;
+        margin-left: 1em;
+
+
+        &:last-child {
+            // Remove margin after the last item to ensure the whole list is
+            // properly aligned vertically.
+            margin-bottom: 0;
+        }
+    }
+
+
+    &__item,
+    &__link {
+        .text_theme_branded;
+    }
+
+
+    @media @laptop-and-up {
+
+        &__item {
+            // Show list items in a row.
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
+}
